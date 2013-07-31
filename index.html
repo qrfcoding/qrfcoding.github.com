@@ -1,98 +1,97 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>div main</title>
+<style>
+body{
+  margin:0px;   /* 使用reset，并非全局reset */
+	padding:0px;   /* body换成"*"便是全局reset  */
+	}
+#container{
+	height:1200px;
+    width:1800px;
+   		 	
+	}
+#left{
+	float:left;
+	width:20%;
+	height:100%;
+	margin:0px;
+	background:url(images/bg-ramp.jpg);
+	background-repeat:repeat-y;
+		
+	}
+#logo{
+	height:120px;
+	width:165px;
+	margin-top:32px;
+	margin-left:90px;
+	background-color:#c94663;
+	background-image:url(images/logo.jpg);	 
+   	background-repeat:no-repeat;
+	padding:1.75em 0.5em 1.75em 0.5em;
+	border-radius:0.4em;
+	text-align:center;
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.15), 0 0.025em 0.15em 0em rgba(0,0,0,0.25);
+		
+	}
+	#introduce{
+		height:150px;
+		width:170px;
+		margin-top:10px;
+		margin-left:90px;		
+		}	
+	#introduce p a{
+		text-decoration:none;
+		color:#1C1E26;		
+		
+		}	
+#content{
+	  height:100%;
+	  width:77%;
+	  margin:0px 50px 0px 0px;	
+	  float:right;
+	  background:#F7F7F7;
+	
+	}	
+</style>
+<script type="text/javascript">
+function hide(){
+	document.getElementById("display").style.display="inline"; //显示开始设置为隐藏的display按钮
+	document.getElementById("left").style.display="none"; //隐藏左边
+	document.getElementById("content").style.width="100%"; //改变右边content的width铺满窗口
+		}
+ function dis(){
+	 document.getElementById("left").style.display="inline";  //显示左边
+	 document.getElementById("content").style.width="77%";    //改变右边content的width属性
+	 document.getElementById("display").style.display="none"  //隐藏display按钮，使得两次点击看似是同一个按钮
+	 
+	 }
+</script>
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"><!--logo 熏--></div>
+   <div id="introduce">
+    <header>
+    <p><a  href="about.html" onmousemove="this.style.color='#C96'" onmouseout="this.style.color=''">july（关于我）</a></p>
+    <p>江西师范大学</p>
+    <p>软件工程</p>
+    </header>
+   </div>
+   
+</div>
+  <div id="content">
+ <input type="image" src="images/hidden.jpg" id="hidden" onclick="hide()" >
+ <input type="image" src="images/hidden.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+  &nbsp;
+ <input type="image" src="images/pre.jpg" name="pre"> 
+ <hr>
+ 
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Qrfcoding.github.com by qrfcoding</title>
-  </head>
-
-  <body>
-       <a id="forkme_banner" href="https://github.com/qrfcoding">View on GitHub</a>
-    <div class="shell">
-
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Qrfcoding.github.com</h1>
-            <h2> test github pages</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
-
-      <div id="no-downloads">
-        <span class="inner">
-        </span>
-      </div>
-
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to My GitHub Pages(For blog).</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>买不起mac, simply sync your repository and you'll see the new branch.<a href="introduce.html">友情链接<about></a></p>
- 
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>设计者模板</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>Projects by <a href="https://github.com/qrfcoding">qrfcoding</a> can be found on <a href="https://github.com/qrfcoding">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
-    </div>
-
-    
-  </body>
+   </div>
+</div>     
+</body>
 </html>
