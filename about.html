@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关于我</title>
+<style>
+body{
+  margin:0px;   /* 使用reset，并非全局reset */
+	padding:0px;   /* body换成"*"便是全局reset  */
+	}
+#container{
+	height:1200px;
+    width:1500px;
+   		 	
+	}
+#left{
+	float:left;
+	width:20%;
+	height:100%;
+	margin:0px;
+	background:url(images/bg-ramp.jpg);
+	background-repeat:repeat-y;
+		
+	}
+#logo{
+	height:120px;
+	width:165px;
+	margin-top:32px;
+	margin-left:90px;
+	background-color:#c94663;
+	background-image:url(images/logo.jpg);	 
+   	background-repeat:no-repeat;
+	padding:1.75em 0.5em 1.75em 0.5em;
+	border-radius:0.4em;
+	text-align:center;
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.15), 0 0.025em 0.15em 0em rgba(0,0,0,0.25);
+		
+	}
+	#introduce{
+		height:150px;
+		width:170px;
+		margin-top:10px;
+		margin-left:90px;
+		
+		}	
+	#introduce p a{
+		text-decoration:none;
+		color:#1C1E26;				
+	}
+		
+ #content{
+	  height:100%;
+	  width:75%;
+	  margin:0px 50px 0px 0px;	
+	  float:right;
+	  background:#F7F7F7;
+	
+	}
+#weiboxiu{
+	
+	margin-top:10px ;
+	margin-left:65%;	
+	width:260px;
+	height:430px;	
+	}	
+#aboutme{
+	margin-left:8%;
+	border:1px solid blue;
+	height:95%;
+	width:50%;
+	float:left;	
+	}	
+#aboutme h2{
+	margin-left:10%;
+	color:#C96;		
+	}
+#aboutme h3{
+	margin-left:5%;
+	color:#C96;	
+	}
+li{
+	font:Georgia, "Times New Roman", Times, serif;
+	
+				
+	}		
+</style>
+<script type="text/javascript">
+function hide(){
+	document.getElementById("display").style.display="inline"; //显示开始设置为隐藏的display按钮
+	document.getElementById("left").style.display="none"; //隐藏左边
+	document.getElementById("content").style.width="100%"; //改变右边content的width铺满窗口
+		}
+ function dis(){
+	 document.getElementById("left").style.display="inline";  //显示左边
+	 document.getElementById("content").style.width="75%";    //改变右边content的width属性
+	 document.getElementById("display").style.display="none"  //隐藏display按钮，使得两次点击看似是同一个按钮
+	 
+	 }
+</script>
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"><!--logo 熏--></div>
+   <div id="introduce">
+    <header>
+    <p>july---<a href="about.html" onmousemove="this.style.color='#C96'" onmouseout="this.style.color=''">关于我</a></p>
+    <p>江西师范大学</p>
+    <p>软件工程</p>
+    </header>
+   </div>
+   
+</div>
+  <div id="content">
+ <input type="image" src="images/hidden.jpg" id="hidden" onclick="hide()" >
+ <input type="image" src="images/hidden.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+  &nbsp;
+ <input type="image" src="images/pre.jpg" name="pre"> 
+  <a href="blog.html" style="text-decoration:none;">回到首页</a>
+ <hr>
+  <div id="aboutme">
+  <h2>一名热爱互联网，希望前后兼修的在校大学生</h2>
+  <p>&nbsp;&nbsp;&nbsp;就读于江西师范大学，目前大三（其实就大四），计划下半年找到实习工作以进一步学习。看见很多厉害的技术大牛，果然，不明觉厉~个人的价值观念是：不怕别人牛逼，就怕比你牛逼的人比你更努力。</p>
+  <h3>最近倒腾过的东西：</h3>
+  <ul>
+  <li>python web开发（pydev,IDLE）</li>
+   <li>github（git,markdown,jkelly）</li>
+    <li>jQuery(jQuery实战基础)</li>
+     <li>html5（canvas编程）</li>
+      <li>SSH（三大框架）</li>
+  </ul>
+   <h3>热衷的技术社区：</h3>
+   <ul>
+   <li>博客园</li>
+    <li>V2EX</li>
+      <li>ITeye</li>
+        <li>CSDN</li>
+   </ul>
+  </div>
+  <div id="weiboxiu">
+  <!--新浪微博微博秀-->
+  <iframe  width="260" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2652146530&verifier=a47fdc6f&dpc=1"></iframe>
+  </div>
+   
+   </div>
+</div>     
+</body>
+</html>
