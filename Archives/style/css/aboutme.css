@@ -15,7 +15,7 @@ body{
 	width:20%;
 	height:100%;
 	margin:0px;
-	background:url(images/bg-ramp.jpg);
+	background:url(../../../images/bg-ramp.jpg);
 	background-repeat:repeat-y;
 		
 	}
@@ -23,7 +23,7 @@ body{
 	height:120px;
 	width:165px;
 	margin-top:32px;
-	margin-left:90px;
+	margin-left:50px;
 	background-color:#c94663;
 	background-image:url(../../../images/jxnuqrf.jpg);	 
    	background-repeat:no-repeat;
@@ -37,7 +37,7 @@ body{
 		height:150px;
 		width:170px;
 		margin-top:10px;
-		margin-left:90px;
+		margin-left:50px;
 		
 		}	
 	#introduce p a{
