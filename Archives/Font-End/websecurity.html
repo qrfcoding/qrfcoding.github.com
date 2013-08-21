@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="title.ico" />
+<title>Web前端安全--读书笔记</title>
+<link  href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<!--others-->
+<style>
+#web table{	
+	  margn:auto;
+	  border:1px solid #669;
+		}	
+
+ #web th{  
+	font-weight:normal;
+	font-style:italic;
+	text-align:left;
+	border:1px dotted #699;
+	background-color:#9cc;	
+	color:#000;
+		}  
+#web th,td{
+	 width:15em;
+	 padding:.5em;
+
+	 }
+#web tr:nth-child(odd){background-color:#ffc;}
+#web tr:nth-child(ecen){background-color:#fff}	 /** 浏览器支持CSS3的话，两行代码解决奇数行偶数行的颜色的问题 **/
+#disqus_thread {
+		border:1px solid  #000;
+	}
+	 	
+</style>
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"><!--logo 熏--></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a  href="../../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="../aboutme.html"><span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a  href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div>  
+    
+     <div id="latest" class="left">
+    <a  href="../Links.html"><span>友情链接</span></a>
+    </div>
+    
+</div>
+   </br></br>
+   <!--calendar-->
+  <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
+   </br></br>
+
+</div>
+
+  <div id="content">
+   <div id="header">
+     <div id="header_left">
+        <input type="image" src="../../images/hidden.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/hidden.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+     </div>
+    &nbsp;
+     <div id="header_right">
+         <ul id="header_right_nav">
+         <!-- <li> <a href="blog.html"><input type="image" src="images/home.png" name="pre"></a></li> -->
+          <li>
+       <div id="header_clock">
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="170" height="50" id="FlashID" title="clock">
+           <param name="movie" value="../../flash/clock.swf">
+           <param name="quality" value="high">
+           <param name="wmode" value="opaque">
+           <param name="swfversion" value="9.0.45.0">
+           <param name="expressinstall" value="Scripts/expressInstall.swf">
+           <!--[if !IE]>-->
+           <object type="application/x-shockwave-flash" data="../../flash/clock.swf" width="170" height="50">
+             <!--<![endif]-->
+             <param name="quality" value="high">
+             <param name="wmode" value="opaque">
+             <param name="swfversion" value="9.0.45.0">
+             <param name="expressinstall" value="Scripts/expressInstall.swf">
+             <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+             <div>
+               <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+               <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+             </div>
+             <!--[if !IE]>-->
+           </object>
+           <!--<![endif]-->
+         </object>
+       </div>
+         </li>
+     </ul>    
+      </div>
+ </div>
+ <!--文章-->
+ <div id="pages">
+   <p>
+   <a>Web前端安全---读书笔记</a>
+   <span class="category-tag">[前端]</span>
+   <span class="date">08月 13日</span>
+   </p>
+   <p>第一章介绍了web安全的几个关键点：</p>
+     <b>浏览器的同源策略</b>
+     <p>同源策略规定：不同域的客户端脚本在没有明确授权的情况下，不能读写对方的资源。同不同域呢，同域要求两个站点同协议，同域名，同端口。</p>
+     <p>域站点http://www.foo.com是否同域</p>
+<table align="center" id="web">
+<tbody>
+<tr>
+<td>https;//www.foo.com</td>
+<td>不同域</td>
+<td>https和http是不同的协议，https是加密的ssl传输协议，http是超文本传输协议。</td>
+</tr>
+<tr>
+<td>http://foo.com</td>
+<td>不同域</td>
+<td>域名不同，顶级域和www子域不是一个概念。（顶级域和二级域名的区别，权重什么的会不同的。）</td>
+</tr>
+<tr>
+<td>http://www.foo.com:8080</td>
+<td>不同域</td>
+<td>端口不同，默认的是80端口。tomcat使用的也是8080端口，当然可以自己配置。</td>
+</tr>
+<tr>
+<td>http://www.foo.com/a/</td>
+<td>同域</td>
+<td>同域名，同端口，同协议，就是多了个目录，根目录多个文件夹咯。</td>
+</tr>
+</tbody>
+</table>
+<b>关于第三方统计脚本 </b>     
+<p>很多网站都嵌入了。如果第三方的统计脚本被黑客挂马，网站本身就会被危机。
+这一点，个人用的是Google Analytics，代码是官方生成的，额，应该没什么很大不安因素吧~~:)
+相对于百度的统计，果断选择了google，只要有个gmail账号，注册，黏贴如下代码到网页呢就可以了。如下：
+</p>     
+<code>
+&lt;script&gt;
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ </br>
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),</br>
+
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)</br>
+
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');</br>
+ 
+  ga('create', 'UA-43018678-1', '网址');</br>
+  ga('send', 'pageview');
+ 
+&lt;/script&gt; 
+</code>
+</br></br>
+<b>社会工程学</b>
+<p>这个名词倒是看这本书第一次听说，看了这本书还是接触到蛮多的概念名词的。
+
+ 社会工程学，简称社工，说白了就是"骗"。个人认为传奇点的"骗"也就如盗梦空间什么的了...
+
+常用的社工辅助技巧：Google Hack ,SNS垂直搜索，各种手机的数据集合查询...巴拉巴拉的东东。</p>
+<b>SQL注入攻击（关于SQL注入更详细~代码注入）</b>
+<p>说白了就是一联合查询（个人的数据库好水好水啊唉），以MySql为例，如果用户是通过http;//www.foo.com/user.php?id=1来获取自身的账号信息的，
+加上联合查询语句：</p>
+<p>1 union select password 1,1 from users</p>
+<p>那么提交请求后，主城的链接的形式就会变成：</p>
+<p> http;//www.foo.com/user.php?id=1 union select password 1,1 from users</p>
+<p>字后端提交的sql查询语句就会变成：</p>
+<p>select username email desc1 from users where id=1 union select password ,1,1 from users
+So，user表的password就很可能不安全了</p>
+<p>虽然这本还有很多看不懂的地方，以后慢慢滴应该就会看得懂吧唉~路漫漫其修远兮。</p>
+
+      </div><!--pages-->
+  
+     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+  
+   </div> <!--content-->
+</div>
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
+<!--DISQUS-->
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+</body>
+</html>

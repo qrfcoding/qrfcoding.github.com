@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* QRF */
+
+body{
+	margin:0px;   /* 使用reset，并非全局reset */
+	padding:0px;   /* body换成"*"便是全局reset  */
+	}
+#container{
+	height:1200px;
+    width:1349px;
+   		 	
+	}
+#left{
+	float:left;
+	width:20%;
+	height:100%;
+	margin:0px;
+	background:url(images/bg-ramp.jpg);
+	background-repeat:repeat-y;
+		
+	}
+#logo{
+	height:120px;
+	width:165px;
+	margin-top:32px;
+	margin-left:90px;
+	background-color:#c94663;
+	background-image:url(../../../images/jxnuqrf.jpg);	 
+   	background-repeat:no-repeat;
+	padding:1.75em 0.5em 1.75em 0.5em;
+	border-radius:0.4em;
+	text-align:center;
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.15), 0 0.025em 0.15em 0em rgba(0,0,0,0.25);
+		
+	}
+	#introduce{
+		height:150px;
+		width:170px;
+		margin-top:10px;
+		margin-left:90px;
+		
+		}	
+	#introduce p a{
+		text-decoration:none;
+		color:#1C1E26;				
+	}
+		
+ #content{
+	  height:100%;
+	  width:75%;
+	  margin:0px 10px 0px 0px;	
+	  float:right;
+	  background:#F7F7F7;
+	
+	}
+#weiboxiu{
+	
+	margin-top:10px ;
+	margin-left:75%;	
+	width:260px;
+	height:430px;	
+	}	
+#aboutme{
+	margin-left:8%;
+	height:95%;
+	width:50%;
+	float:left;	
+	}	
+#aboutme h2{
+	margin-left:10%;
+	color:#C96;		
+	}
+#aboutme h3{
+	margin-left:5%;
+	color:#C96;	
+	}
+li{	font:Georgia, "Times New Roman", Times, serif;
+	}
+li a{
+	text-decoration:none;color:#666666;}	
+li a:hover{color:#9c6;}			

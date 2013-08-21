@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="title.ico" />
+<title>Contact Me</title>
+<link  href="../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/Calendar.js"></script>
+
+<!--others-->
+
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"><!--logo 熏--></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a  href="../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="aboutme.html"><span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a href="contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+      </div>
+     
+     <div id="latest" class="left">
+    <a href="Links.html"><span>友情链接</span></a>
+    </div>
+     
+         
+</div>
+   </br></br>
+   <!--calendar-->
+  <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
+   </br></br>
+
+</div>
+
+  <div id="content">
+
+     
+   
+
+
+ <div id="pages">
+ <h1>Contact Me</h1>
+ <p>地址：江西师范大学瑶湖校区三栋</p>
+ <p>邮箱：julyellen@163.com</p> 
+ <p>电话：1877009****</p> 
+ </div><!--pages-->
+    </div> <!--content-->
+</div>
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+  
+</body>
+</html>
