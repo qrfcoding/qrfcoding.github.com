@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="title.ico" />
+<title>很有爱的七夕Fork</title>
+<link  href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<!--others-->
+<style>
+p.qi:first-letter{
+    display: block;  /**CSS2.1 之前，:first-letter 只能与块级元素关联。CSS2.1 扩大了这个范围，可以与任何元素关联。P本来就是块级元素**/
+    margin: 5px 0 0 5px;    
+    color:#9c6;
+    font-size:2em;
+    font-family: Georgia, Times New Roman, serif;
+	}
+p.line:first-line{
+	color:#666633;
+	}
+</style>
+
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"><!--logo 熏--></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a  href="../../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="../aboutme.html"><span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a  href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div>  
+    
+     <div id="latest" class="left">
+    <a  href="../Links.html"><span>友情链接</span></a>
+    </div>
+    
+</div>
+   </br></br>
+   <!--calendar-->
+  <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
+   </br></br>
+
+</div>
+
+  <div id="content">
+   <div id="header">
+     <div id="header_left">
+        <input type="image" src="../../images/hidden.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/hidden.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+     </div>
+    &nbsp;
+     <div id="header_right">
+         <ul id="header_right_nav">
+         <!-- <li> <a href="blog.html"><input type="image" src="images/home.png" name="pre"></a></li> -->
+          <li>
+       <div id="header_clock">
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="170" height="50" id="FlashID" title="clock">
+           <param name="movie" value="../../flash/clock.swf">
+           <param name="quality" value="high">
+           <param name="wmode" value="opaque">
+           <param name="swfversion" value="9.0.45.0">
+           <param name="expressinstall" value="Scripts/expressInstall.swf">
+           <!--[if !IE]>-->
+           <object type="application/x-shockwave-flash" data="../../flash/clock.swf" width="170" height="50">
+             <!--<![endif]-->
+             <param name="quality" value="high">
+             <param name="wmode" value="opaque">
+             <param name="swfversion" value="9.0.45.0">
+             <param name="expressinstall" value="Scripts/expressInstall.swf">
+             <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+             <div>
+               <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+               <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+             </div>
+             <!--[if !IE]>-->
+           </object>
+           <!--<![endif]-->
+         </object>
+       </div>
+         </li>
+     </ul>    
+      </div>
+ </div>
+ <!--文章-->
+ <div id="pages">
+   <p>
+   <a>很有爱的七夕Fork</a>
+   <span class="category-tag">[前端]</span>
+   <span class="date">08月 22日</span>
+   </p>
+    <p class="qi">七夕晚上注定死宅着（PS:专注死宅20年~七用了first-letter伪元素竟然不是文本元素了？）T.T</p>
+    <p class="line">在V2EX上闲逛看到的"炫爱"贴，本着极其唾弃其的心情，读完了帖子,LZ确实是厉害，虽然这个效果也是Github上的源码。还是先看效果吧,个人稍微修改了一丢丢，技术宅的表白神器:)</p> 
+    <p>传送门：<a href="../../Love-master/love.html" target="_blank">SHILY</a></p> 
+    <p>感觉很惊艳有木有，右边<span style="font-size:18px;color:#F0C;">&hearts;</span>是个Canvas，很强的二维图像编程啊，之前又折腾过一段时间Canvas API，也是只能绘制颗树什么的，后来直接被坐标搞懵了...如果你的浏览器不支持HTML5的话...那只能说明你太out了，作为一个开发者，Chrome必备。</p>
+    <p>检测浏览器是否支持Canvas API的代码：</p>
+     <code>
+     try{
+     document.creatElement("canvas").getContext("2d");</br>
+     document.geElementById("support").innerHTML="HTML5 Canvas is supported in your browser";</br>
+     }catch(e){  </br>
+     document.getElementById("support").innerHTML="HTML5 Canvas is not supported in your browser";
+     }
+     </code>
+     <p>至于左边的动画打字效果倒是很好实现的：</p>
+     动画打字效果：<a id="HotNews" href="" target="_blank"></a>
+     <p>代码的js源码就在页面内，就不过多解释了。</p>
+     <p>为了尊重下版权，还是附上下Github的原址，当然，我肯定是Fork到了我自己的库里面的，哈~</p>
+     <p><a href="https://github.com/hackerzhou/Love">hackerzhou</a></p>
+      </div><!--pages-->
+  
+     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+  
+   </div> <!--content-->
+</div>
+<script>
+<!--
+var NewsTime = 2000;	//每条新闻的停留时间
+var TextTime = 50;		//新闻标题文字出现等待时间，越小越快
+
+var newsi = 0;
+var txti = 0;
+var txttimer;
+var newstimer;
+
+var newstitle = new Array();	//新闻标题
+var newshref = new Array();		//新闻链接
+
+newstitle[0] = "QRF";
+newshref[0] = "http://qiurifeng.org.cn/";
+
+newstitle[1] = "很有爱的七夕Fork ";
+newshref[1] = "http://qiurifeng.org.cn/Archives/Font-End/shily.html";
+
+newstitle[2] = "动画打字效果";
+newshref[2] = "#";
+
+function shownew()
+{
+	var endstr = "_"
+	hwnewstr = newstitle[newsi];
+	newslink = newshref[newsi];
+	if(txti==(hwnewstr.length-1)){endstr="";}
+	if(txti>=hwnewstr.length){
+		clearInterval(txttimer);
+		clearInterval(newstimer);
+		newsi++;
+		if(newsi>=newstitle.length){
+			newsi = 0
+		}
+		newstimer = setInterval("shownew()",NewsTime);
+		txti = 0;
+		return;
+	}
+	clearInterval(txttimer);
+	document.getElementById("HotNews").href=newslink;
+	document.getElementById("HotNews").innerHTML = hwnewstr.substring(0,txti+1)+endstr;
+	txti++;
+	txttimer = setInterval("shownew()",TextTime);
+}
+shownew();
+</script>
+
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
+<!--DISQUS-->
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+</body>
+</html>
