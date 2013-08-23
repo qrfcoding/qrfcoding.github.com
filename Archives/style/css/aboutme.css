@@ -34,15 +34,47 @@ body{
 		
 	}
 	#introduce{
-		height:150px;
-		width:170px;
-		margin-top:10px;
-		margin-left:50px;
-		
-		}	
-	#introduce p a{
-		text-decoration:none;
-		color:#1C1E26;				
+	height:170px;
+	width:170px;
+	margin-top:10px;
+ 	margin-left:45px;
+	
+	}	
+
+#introduce a{
+	 text-decoration:none;
+		color:#1C1E26;	
+	}	 	
+
+#latest{
+	margin-top:30px;
+	text-align:center;
+	 font-size:18px;	
+	 height:20px;
+	 width:90%;
+	}
+
+#sort{
+	text-align:center;
+	 margin-top:30px;
+	 font-size:18px;	
+	 height:20px;
+	 width:90%;
+	}
+
+ #about{
+	 text-align:center;
+	 margin-top:30px;
+	 font-size:18px;	
+	 height:20px;
+	 width:90%;
+	 }
+#contact{
+	 text-align:center;
+	 margin-top:30px;
+	 font-size:18px;	
+	 height:20px;
+	 width:90%;
 	}
 		
  #content{
