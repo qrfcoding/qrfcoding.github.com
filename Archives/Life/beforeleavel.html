@@ -3,15 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
-<meta name="description" content="Blog Power By QRF">
-<link rel="shortcut icon" href="favicon.ico" />
-<title>高效的CSS</title>
-<link  href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="title.ico" />
+<title>大四，写在走之前的话</title>
+<link   href="../../css/blog.css" type="text/css" rel="stylesheet">
 <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script type="text/javascript" src="../../js/jquery.js"></script>
 <script type="text/javascript" src="../../js/Calendar.js"></script>
-<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script  src="../Font-End/Scripts/swfobject_modified.js" type="text/javascript"></script>
 <!--others-->
 <style>
 .button {
@@ -98,41 +96,23 @@
  <!--文章-->
  <div id="pages">
    <p>
-   <a>高效的CSS</a>
-   <span class="category-tag">[前端]</span>
+   <a>大四，写在走之前的话</a>
+   <span class="category-tag">[生活]</span>
    <span class="date">08月 23日</span>
-   </p>
-   <p>最近学习的一些CSS~~</p>
-   <p>通常情况下，大多数开发人员没有考虑过CSS效率问题。CSS的效率反映在页面渲染上，如果模式低效，应用程序在浏览器上运行就会很慢。关于渲染，顺带一提的是，为什么div布局会如此受到青睐相对于table布局?
-   <p>首先，HTML使用的是flow based layout，也就是流式布局，所以，如果某元件的几何尺寸发生了变化，需要重新布局，也就叫reflow，所以table不觉如果某个元件发生变化，将会导致整个table重新的reflow，这显然是低效率的一件事情。</p>
-   <p>更多关于浏览器的渲染原理，参照陈浩老师的一篇博文：<a href="http://coolshell.cn/articles/9666.html" target="_blank">浏览器的渲染原理简介</a></p>
-   <p>切入正题：因为浏览器解析CSS选择器是<span style="color:#990033;">从右到左</span>的。所以以下CSS代码一点效率都没有: </p>
-    <p><code>body ul li a { </br>
-    color: #F000;</br>
-    text-decoration: none;</code>
-}</p>
-   <p>这是因为该引擎首先识别所有的&lt;a&gt;标签，评估每个母元素，最终收集到所需模式。你要知道，为了提高效率，选择器有个 先后排序：ID、类、标签及其一般。这意味着一个带有id的元素集比只带有标签选择器的元素更快的被渲染。当然，在所有DOM树元素都加上id是没有意义 的，但你应该特定检查代码，把可能加id的地方都加上。比如你可以按照以下方式做： </p>
-    <p><code>
-    ul #navigation li { </br>
-    background: #ff0232;</br>
-   }    
-    </code></p>
-    <p>k看到一篇博文上说又如你想再创建一个同样样式的按钮，但是颜色不同，你可以这样做：</p>
-    <p><code>.button {  <br>
-    border: solid 1px #000;  <br>
-    padding: 10px;   <br>
-    background: #9f0;  <br>
-    color: #0029FF;  <br>
-}
-.active-button {  <br>
-    .button();    <br>
-    color: #FFF; 
-}</code></p>
-   <p>实例如下：</p>
-    <button class="button"  type="button">test1</button>  <br>
-    <button class="button1"  type="button">test2</button>
-    <p>好吧，测试无效，CSS的选择符我所知道的也就：元素选择符，关系选择符，属性选择符，伪类选择符。不知道这种写法是从何而来，当然如果可以这样复用的CSS也是很好的。以后再深究下这个问题吧，人的学习总是一步一步来的~~</p>
-    <p>持续更新一些看到到的学到的CSS相关知识~啦啦 Stay hunger，Stay foolish.</p>
+     </p>
+     <p>开头该从哪里说起呢，从出工作室那天说起吧。交完项目以及各类文档，终于是结束了一年的工作室。忘记是什么理由了，关工作室的那天下午在那里呆了很久，依稀还记得TJ同学闲着把工作室的前几排电脑系统都装了个遍...下一届的学弟学妹们不知道他们有一个爱装系统的TJ学姐，呵呵。晚上聚餐，不胜酒力啊，个人确实是一瓶啤酒倒的货...不过之后倒是蛮清醒的比我们班的那些男生。也就是从那天开始，我告诉自己工作室没了，大三没了，我大四了，不能逃避了。</p>
+    <p>之后的事情，至今想起来却是有种莫名的挫败感</p>
+     <p>在室友的告知下以及其他的相关因素，和才叔去了趟深圳。关于这座城市，我记得发了条说说，“每天匆匆的走过这些繁华，有的时候感觉自己不属于这里却还是想要融入这里，一个没见过世面的穷小子唉，如果我不属于这里，那我又属于哪里？”最终我选择了回来。</p>
+     <p>七月19号回到家里，在外的日子里明白了生活不容易。</p>
+     <p>觉得自己学得不够好，不够自信，希望回来好好地充电下。很遗憾，到今天，我还是没有成为技术帝。</p>
+     <p>在家的日子，做的最为完整的就是建立起了这个blog，虽然看起来很简单的样子，确实花费了我不少的功夫。</p>
+     <p>专注的做一件事情，做好这件事情就够了。前后兼修，一直是我的目标。考研也好，实习也好，你有你的梦想，我有我的欲望</p>
+     <p>生活很现实，现实的有时候你不想面对，但是却不能逃避</p>
+     <p>在南山区隔着不远处看见的腾讯大楼。华为，中兴，TCL，联想都在那...</p>
+     <p><img src="images/TX.png"></p>
+     <p>回来的时候我告诉自己我还会回去的。</p>
+     <p>明天回学校，Stay foolish ，Stay hunger。总得有点结果，让人看得见的结果，不然就只是说说而已。</p>
+     <p>Last:You make millions of decisions that mean nothing and then one day your order takes out and it changes your life</p>
     </div><!--pages-->
   
      <div id="disqus_thread"></div>
