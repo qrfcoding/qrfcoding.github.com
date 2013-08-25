@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
+<meta name="description" content="Blog Power By QRF">
+<link rel="shortcut icon" href="favicon.ico" />
+<title>CSS Sprite</title>
+<link  href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<!--others-->
+<style>
+#sprite li{ display:inline-block;
+          list-style:none;
+		  margin-left:30px;
+		          
+          }
+
+#longzhu {    
+    height:75px;
+	width:204px;
+	background:url(eyes.jpg) 0px 0px; 
+
+}
+
+#haizei {    
+    height:75px;
+	width:204px;
+	background:url(eyes.jpg) 0px -82px; 
+
+}
+
+#sishen { 
+  
+    height:75px;
+	width:204px;
+	background:url(eyes.jpg) 0px -155px; 
+
+}
+#huoyin { 
+  
+    height:72px;
+	width:204px;
+	background:url(eyes.jpg) 0px -228px; 
+
+}
+</style>
+
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a  href="../../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="../aboutme.html"><span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a  href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div>  
+    
+     <div id="latest" class="left">
+    <a  href="../Links.html"><span>友情链接</span></a>
+    </div>
+    
+</div>
+   </br></br>
+   <!--calendar-->
+  <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
+   </br></br>
+
+</div>
+
+  <div id="content">
+   <div id="header">
+     <div id="header_left">
+        <input type="image" src="../../images/hidden.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/hidden.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+     </div>
+    &nbsp;
+     <div id="header_right">
+         <ul id="header_right_nav">
+         <!-- <li> <a href="blog.html"><input type="image" src="images/home.png" name="pre"></a></li> -->
+          <li>
+       <div id="header_clock">
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="170" height="50" id="FlashID" title="clock">
+           <param name="movie" value="../../flash/clock.swf">
+           <param name="quality" value="high">
+           <param name="wmode" value="opaque">
+           <param name="swfversion" value="9.0.45.0">
+           <param name="expressinstall" value="Scripts/expressInstall.swf">
+           <!--[if !IE]>-->
+           <object type="application/x-shockwave-flash" data="../../flash/clock.swf" width="170" height="50">
+             <!--<![endif]-->
+             <param name="quality" value="high">
+             <param name="wmode" value="opaque">
+             <param name="swfversion" value="9.0.45.0">
+             <param name="expressinstall" value="Scripts/expressInstall.swf">
+             <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+             <div>
+               <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+               <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+             </div>
+             <!--[if !IE]>-->
+           </object>
+           <!--<![endif]-->
+         </object>
+       </div>
+         </li>
+     </ul>    
+      </div>
+ </div>
+ <!--文章-->
+ <div id="pages">
+   <p>
+   <a>CSS Sprites</a>
+   <span class="category-tag">[前端]</span>
+   <span class="date">08月 25日</span>
+   </p>
+   <p>关于CSS Sprite技术实在最近看到的一篇前端最佳性能实践看到的，之前真的是寡闻了唉~于是稍微折腾了下。</p>
+   <p>学习链接：<a href="http://www.w3schools.com/css/css_image_sprites.asp" target="_blank">CSS Sprite</a></p>
+   <p>简介：CSSSprites在国内很多人叫css精灵，是一种网页图片应用处理方式。它允许你将一个页面涉及到的所有零星图片都包含到一张大图中去，这样一来，当访问该页面时，载入的图片就不会像以前那样一幅一幅地慢慢显示出来了。对于当前网络流行的速度而言，不高于200KB的单张图片的所需载入时间基本是差不多的，所以无需顾忌这个问题。</p>
+   <p>加速的关键，不是降低质量，而是减少个数。传统切图讲究精细，图片规格越小越好，重量越小越好，其实规格大小无所谓，计算机统一都按byte计算。客户端每显示一张图片都会向服务器发送请求。所以，图片越多请求次数越多，造成延迟的可能性也就越大。</p>
+   <p>接下里实例来个走起：</p>
+     <p>然后通过CSS Sprite 我们可以实现的效果：</p>
+   <ul id="sprite">
+     <li id="longzhu"></li>
+      <li id="haizei"></li>
+         <li id="sishen"></li>
+            <li id="huoyin"></li>
+    </ul>
+    <hr>
+   <p>原图：<img src="eyes.jpg"></p>
+   
+   <p>其实主要是还是运用了background-position这个属性来操作图片显示的具体位置，但是需要注意的是：<strong>背景图片的左上角将与容器元素的左上角对齐</strong></p>
+   <p>比如code</p>
+   <code>
+   #huoyin { <br>  
+    height:72px; <br>
+	width:204px; <br>
+	background:url(eyes.jpg) 0px -228px; <br>
+}
+   </code>
+   <p>通俗点说就是0px代表着整张图片在水平方向即不往左边或者右边偏移，而-288px代表着整张图片在垂直方向<strong>向上</strong>偏移288px</p>
+   <p>主要是定位需要理解一下，其他的倒没什么了。</p>
+    </div><!--pages-->
+  
+     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+  
+   </div> <!--content-->
+</div>
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
+<!--DISQUS-->
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+</body>
+</html>
