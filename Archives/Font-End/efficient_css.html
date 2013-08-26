@@ -117,7 +117,7 @@
     background: #ff0232;</br>
    }    
     </code></p>
-    <p>k看到一篇博文上说又如你想再创建一个同样样式的按钮，但是颜色不同，你可以这样做：</p>
+    <p>看到一篇博文上说又如你想再创建一个同样样式的按钮，但是颜色不同，你可以这样做：</p>
     <p><code>.button {  <br>
     border: solid 1px #000;  <br>
     padding: 10px;   <br>
@@ -132,7 +132,17 @@
     <button class="button"  type="button">test1</button>  <br>
     <button class="button1"  type="button">test2</button>
     <p>好吧，测试无效，CSS的选择符我所知道的也就：元素选择符，关系选择符，属性选择符，伪类选择符。不知道这种写法是从何而来，当然如果可以这样复用的CSS也是很好的。以后再深究下这个问题吧，人的学习总是一步一步来的~~</p>
-    <p>持续更新一些看到到的学到的CSS相关知识~啦啦 Stay hunger，Stay foolish.</p>
+    <p>关于<strong>CSS表达式</strong>：CSS表达式可以动态的设置CSS属性，在IE5-IE8中支持，其他浏览器中表达式会被忽略。例如下面表达式在不同时间设置不同的背景颜色。</p>
+    <code>
+    background-color: expression( (new Date()).getHours()%2 ? "#B8D4FF" : "#F08A00" );
+     </code>
+
+   <p><strong>在CSS中，height和width指的是内容区域的高度和宽度，增加内边距，边框，外边距不会影响内容区域的尺寸，但是会改变元素框的尺寸大小</strong></p>
+   <p>IE和盒模型：IE的早期版本，包括让人蛋碎的IE6，这些浏览器的width属性不是内容的宽度，而是内容，内边距，边框的宽度总和。其实吧，这种盒模型我觉得更加符合的逻辑，可是不符合标准规范便是了。
+   <p>只有在普通文档流的块框的垂直外边距才会发生外边距叠加。行内框，浮动框，绝对定位框之间的外边距不会叠加。</p>
+   
+   </p>
+    <p>持续更新一些看到到的学到的CSS相关知识~啦啦 Stay hunger,Stay foolish.</p>
     </div><!--pages-->
   
      <div id="disqus_thread"></div>

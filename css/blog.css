@@ -7,15 +7,17 @@ Author:QRF
 body{
 	margin:0px;   /* 使用reset，并非全局reset */
 	padding:0px;   /* body换成"*"便是全局reset  */
-	
+	width:100%
+	height:100%;
 	}
 
 html{ font-family:Arial, Helvetica, sans-serif;}	
 	
 #container{
-	height:1500px;;
-    width:1340px;
-		
+	height:100%;
+    width:100%;
+	min-height:1500px;
+	min-width:1340px;		
    		 }
 	 
 #left{
@@ -24,7 +26,6 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	height:100%;
 	margin:0px;
 	background:url(../images/bg-ramp.jpg);
-	background-color:#364050;
 	background-repeat:repeat-y;
 	
 			
