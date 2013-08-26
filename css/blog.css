@@ -22,11 +22,12 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	 
 #left{
 	float:left;
-	width:21%;
 	height:100%;
-	margin:0px;
+	width:21%;	
+	min-height:1500px;
 	background:url(../images/bg-ramp.jpg);
 	background-repeat:repeat-y;
+	
 	
 			
 	}
@@ -112,11 +113,14 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 
 /*右边内容*/			
 #content{
+	  position:relative; /**设置定位属性，但是不设置偏移属性，为子元素定位提供基准，如footer子div**/
 	  height:100%;
+	  min-height:1500px;
 	  width:75%;
 	  margin:0px;	
 	  float:right;
 	  background:#F7F7F7;
+	 
 
 	 
 	}
@@ -156,20 +160,22 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	}	
 	
 #pages{
+	
 	margin-top:5%;
-	margin-left:16%;
+	margin-left:13%;
 	text-align:left;
 	width:70%;
 	height:auto;
+	
 
 	}
 #footer{
-	margin-top:90%;
-	margin-left:16%;
+    position:absolute;    /**IE6b不支持fixed**/
+    bottom:0;           /**如何让fooert底部居中**/
 	text-align:center;
 	width:70%;
 	height:20px;
-	
+
 	}	
 #introduce a:hover{color:#CC9966;}	
 #pages h1{color:rgba(0,0,0,0.3);}	

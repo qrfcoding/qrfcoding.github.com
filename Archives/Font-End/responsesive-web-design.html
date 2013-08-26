@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
+<meta name="description" content="Blog Power By QRF">
+<link rel="shortcut icon" href="favicon.ico" />
+<title>自适应网页设计 Responsive Web Design</title>
+<link  href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<!--others-->
+<style>
+
+</style>
+
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a  href="../../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="../aboutme.html"><span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a  href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div>  
+    
+     <div id="latest" class="left">
+    <a  href="../Links.html"><span>友情链接</span></a>
+    </div>
+    
+</div>
+   </br></br>
+   <!--calendar-->
+  <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
+   </br></br>
+
+</div>
+
+  <div id="content">
+   <div id="header">
+     <div id="header_left">
+        <input type="image" src="../../images/hidden.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/hidden.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+     </div>
+    &nbsp;
+     <div id="header_right">
+         <ul id="header_right_nav">
+         <!-- <li> <a href="blog.html"><input type="image" src="images/home.png" name="pre"></a></li> -->
+          <li>
+       <div id="header_clock">
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="170" height="50" id="FlashID" title="clock">
+           <param name="movie" value="../../flash/clock.swf">
+           <param name="quality" value="high">
+           <param name="wmode" value="opaque">
+           <param name="swfversion" value="9.0.45.0">
+           <param name="expressinstall" value="Scripts/expressInstall.swf">
+           <!--[if !IE]>-->
+           <object type="application/x-shockwave-flash" data="../../flash/clock.swf" width="170" height="50">
+             <!--<![endif]-->
+             <param name="quality" value="high">
+             <param name="wmode" value="opaque">
+             <param name="swfversion" value="9.0.45.0">
+             <param name="expressinstall" value="Scripts/expressInstall.swf">
+             <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+             <div>
+               <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+               <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+             </div>
+             <!--[if !IE]>-->
+           </object>
+           <!--<![endif]-->
+         </object>
+       </div>
+         </li>
+     </ul>    
+      </div>
+ </div>
+ <!--文章-->
+ <div id="pages">
+   <p>
+   <a>自适应网页设计（Responsive Web Design）</a>
+   <span class="category-tag">[前端]</span>
+   <span class="date">08月 26日</span>
+   </p>
+    <p class="muted">关于<strong>自适应网页设计</strong>，我个人的理解呢就是让代码"一次编写，随处运行"适用于各种场合，例如移动终端。当然这和java的概念不一样咯，没有各个平台的JVM，java是做不到一次编写随处运行的。扯多了~~</p>
+    <p class="text-warning">下面介绍收集整理的<abbr title="Responsive Web Design">自适应</abbr>的一些方法~</p> 
+    <p><strong>meta标签：</strong><br>
+   为了适应屏幕，不少手机浏览器都会把HTML页面置于较大视口宽度来适应屏幕大小，你可以使用meta标签的viewport来重置。The viewport tag below tells the browser to use the device width as the viewport width and disable the initial scale. Include this meta tag in the &lt;head&gt;.
+    </p> 
+    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> 
+    <p>E8及其更低版本不支持media query，可以使用 media-queries.js或 respond.js脚本实现支持。(关于CSS3 Media Queries后面还会提到)</p>
+    <code>
+     &lt;!--[if lt IE 9]> <br>
+      &lt;script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"&gt;&lt;/script&gt; <br>
+       &lt;![endif]--&gt;
+    </code>
+    <p><strong>CSS3 Media Queries:</strong><br>
+    CSS3 media query是自适应网页设计的关键，他就像高级语言里的if条件语句，告诉浏览器根据不同的视口宽度（这里等于浏览器宽度）来渲染网页。如果视口宽度小于等于980px，下面规则生效。
+      这里将容器像素宽度该用百分比，页面排版更加灵活。
+    </p>
+    <img src="980px-or-less.png">
+    <p>当视口宽度小于等于480px时（如手机屏幕），将#header高度设为自动，h1 的字体大小设定为24px，并隐藏#sidebar。</p>
+    <img src="480px-or-less.png">
+    <p>关于CSS Media Queries这几天会有进一步的探究~~</p>
+    </div><!--pages-->
+  
+     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+  
+   </div> <!--content-->
+</div>
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
+<!--DISQUS-->
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+</body>
+</html>
