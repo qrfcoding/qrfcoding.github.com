@@ -26,16 +26,12 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	width:21%;	
 	min-height:1500px;
 	background:url(../images/bg-ramp.jpg);
-	background-repeat:repeat-y;
-	
-	
-			
+	background-repeat:repeat-y;			
 	}
 #logo{
 	height:120px;
-	width:165px;
-	margin-top:10px;
-	margin-left:45px;
+	width:165px;	
+	margin:10px 45px 6%;
 	background-image:url(../images/logo.jpg);		 
    	background-repeat:no-repeat;
 	padding:1.75em 0.5em 1.75em 0.5em;
@@ -45,9 +41,8 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	}
 /*介绍*/	
 #introduce{
-	height:170px;
+	height:220px;      /*为什么改变成百分比没有效果，而px还是有效。。。*/
 	width:170px;
-	margin-top:10px;
  	margin-left:45px;
 	
 	}	
@@ -62,7 +57,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	text-align:center;
 	 font-size:18px;	
 	 height:20px;
-	 width:90%;
+	 width:90%;	
 	}
 
 #sort{
@@ -83,6 +78,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 #contact{
 	 text-align:center;
 	 margin-top:30px;
+	 margin-bottom:20px;
 	 font-size:18px;	
 	 height:20px;
 	 width:90%;
