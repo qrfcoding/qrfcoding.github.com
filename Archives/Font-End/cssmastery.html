@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
+<meta name="description" content="Blog Power By QRF">
+<link rel="shortcut icon" href="favicon.ico" />
+<title>精通CSS，高级WEB解决方案---读书笔记</title>
+<link  href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<!--others-->
+<style>
+#tittle1{
+	height:100px;
+	width:100px;
+	border:1px solid #0CF;
+	margin-bottom:30px;	
+	}
+#tittle2{
+	height:100px;
+	width:100px;
+	border:1px solid #F0F;
+	margin-top:40px;	
+	}
+span#hangnei{
+	height:40px; /**无效，行内框不能显示的设置高度或者宽度**/
+	width:40px;
+	border:1px solid #F3F;	
+	}	
+strong{
+	display:inline-block;/***这个属性使得行内框具有了块级框的行为，能够设置高度宽度了**/
+	height:40px;
+	border:1px solid #FC6;	
+	}
+img{
+	width:400px;/**会隧比例的缩小而缩小或者随其增大**/
+	position:absolute;
+	z-index:1;
+	float:left;	
+	}
+span#words{
+	position:relative;
+	left:40px;
+	top:220px;
+	z-index:2;
+	color:#CC3;
+	border:0px;
+	}
+</style>
+
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a  href="../../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="../aboutme.html"><span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a  href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div>  
+    
+     <div id="latest" class="left">
+    <a  href="../Links.html"><span>友情链接</span></a>
+    </div>
+    
+</div>
+   </br></br>
+   <!--calendar-->
+  <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
+   </br></br>
+
+</div>
+
+  <div id="content">
+   <div id="header">
+     <div id="header_left">
+        <input type="image" src="../../images/hidden.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/hidden.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+     </div>
+    &nbsp;
+     <div id="header_right">
+         <ul id="header_right_nav">
+         <!-- <li> <a href="blog.html"><input type="image" src="images/home.png" name="pre"></a></li> -->
+          <li>
+       <div id="header_clock">
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="170" height="50" id="FlashID" title="clock">
+           <param name="movie" value="../../flash/clock.swf">
+           <param name="quality" value="high">
+           <param name="wmode" value="opaque">
+           <param name="swfversion" value="9.0.45.0">
+           <param name="expressinstall" value="Scripts/expressInstall.swf">
+           <!--[if !IE]>-->
+           <object type="application/x-shockwave-flash" data="../../flash/clock.swf" width="170" height="50">
+             <!--<![endif]-->
+             <param name="quality" value="high">
+             <param name="wmode" value="opaque">
+             <param name="swfversion" value="9.0.45.0">
+             <param name="expressinstall" value="Scripts/expressInstall.swf">
+             <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+             <div>
+               <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+               <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+             </div>
+             <!--[if !IE]>-->
+           </object>
+           <!--<![endif]-->
+         </object>
+       </div>
+         </li>
+     </ul>    
+      </div>
+ </div>
+ <!--文章-->
+ <div id="pages">
+   <p>
+   <a>精通CSS，高级WEB解决方案---读书笔记</a>
+   <span class="category-tag">[前端]</span>
+   <span class="date">08月 29日</span>
+   </p>
+   <p class="muted">啦啦啦，来学校几天打印了这本书，看完了前三章这本书，虽然这本书年带上有点老了，例如CSS3块介绍的不多，但是看完还是有点收获的，之前学下CSS一般是通过W3C，但是那些东东，用一个学一个，缺少系统的总结分析，而且有些时候用的很“盲目”，如果你系统的照着W3C一个个属性学习...那绝对没有必要的，有一句话：你用不到的即使学习了，又有什么用了~~当然有些东西以后一定会用的到的这个就看个人的把握了，觉得这些东西以后自己是否用得上。</p>
+   <p class="muted">预期的计划是开学这几天学习完这本书，当然要看我的消化能力了~~暑假节基本上涉及的都是前端的耳朵一些杂七杂八的东西，九月份花一个月学习继续学习后端只知识，巩固并且学习SSH，当然可能还有python，我总是那么多心的，哇咔咔·~</p>  
+   <p class="muted">有一定的页面设计处理能力后重写上学期的项目，一个月。哦，还得帮室友做一个简单的网络相册系统的毕业设计...那个应该还好做的说，瀑布流。</p>
+   <p>貌似又跑题了.....OK先记录点学习的CSS知识吧，当然大部分都记在脑子里面了，不一定全写出来~~(～ o ～)Y，写出来又没人看~~</p>
+   <p>直接看效果吧，CSS源码在页面~</p>
+   <hr>
+<div id="tittle1">Tittle1</div>
+<!--块框的垂直外边距的叠加-->
+<div id="tittle2">Tittle2</div>
+块框的垂直外边距的叠加，叠加之后吃两者之间较大的那者...这里是40px，但是要注意的是，仅限于垂直，而且行内框，浮动框，绝对定位框的外边距不会叠加...
+<hr>
+<span id="hangnei">11111</span><span id="hangnei">22222</span><span id="hangnei">33333</span>
+无效，行内框（如span，strong）不能显示的设置高度或者宽度。
+<hr>
+<strong>33333</strong><strong>444444</strong><strong>555555</strong>
+<br>
+加上一个属性：display：inline-block,使得这个属性使得行内框具有了块级框的行为，能够设置高度宽度了
+<hr>
+<img src="465.jpg">
+<span id="words">生如夏花,死如秋叶</span>
+<p style="position:relative;left:80px; top:60px;float:right; z-index:3;">绝对定位的位置<br>是相对于距离它最近的那个已经定位的祖先元素确定的。</p>
+
+    </div><!--pages-->
+  
+     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+  
+   </div> <!--content-->
+</div>
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
+<!--DISQUS-->
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+</body>
+</html>
