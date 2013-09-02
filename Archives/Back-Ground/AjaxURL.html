@@ -6,7 +6,7 @@
 <meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
 <meta name="description" content="Blog Power By QRF">
 <link rel="shortcut icon" href="favicon.ico" />
-<title>关于Github Pages</title>
+<title>Ajax中文传值乱码问题</title>
 <link   href="../../css/blog.css" type="text/css" rel="stylesheet">
 <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script type="text/javascript"  src="../../js/jquery.js"></script>
@@ -38,10 +38,9 @@
     </div>
      
 </div>
- 
-   <!--calendar-->
+     <!--calendar-->
   <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
-  
+   
 
 </div>
 
@@ -88,19 +87,73 @@
   
   <!--文章-->
  <div id="pages">
- <a>关于Github Pages</a>
- <span class="category-tag">[其他]</span>
-   <span class="date">08月 21日</span>
- <p>廉价的姓名域名，免费的Github主机，如此如此这般这般，就有了这个Blog</p>
- <p>刚刚开始接触Github，全英文，很排斥，一段时间后习惯就好</p>
- <p>折腾git,各种命令，果然是因为习惯图形化界面的操作，这个得改</p>
- <p>查阅了很多前端性能最佳实践的博文和资料，不过针对这个小小的静态blog却还是用到不多，或者说没必要</p>
- <p>页面css,js基本手写和仿照，稍微用了Bootstrap</p>
- <p>以后的博文果然还是得采用Markdown,以及Jekyll</p>
- <p>今天在同学的大屏显示器上访问自己的站点的时候，发现width就不够宽了，右边出现了些许的空白显然的是height也不够了，所以background没有覆盖整个屏幕，其实当初已经想到这问题，不过到底没怎么认真去解决，还是要做到自适应网页设计啊~~</p>
-<p>本想着在页面左侧加上RevolverMaps的，显得更加高端大气上档次一点，想想还是算了。一是，页面看起来简洁整齐就是最好的设计。二是随着首页的DOM节点的增加，虽然是静态页面，但是页面的加载速度还是受到一定影响。CSS，JS文件没有做压缩处理，想着近期可能会改动呢。再者，已经加上Google Analytics了，RevolverMaps就显得没那么必要了。再者首页已经有加载一个flash的clock了，但是在移动端的flash的解决方案还得探究一下啊......
-</p>
-  <p>如此如此，这般这般.....持续更新....</p>
+ <a>Ajax中文传值乱码问题</a>
+ <span class="category-tag">[后台]</span>
+   <span class="date">09月 2日</span>
+  <p>今天本想着去图书馆借书的，EXT江湖，effective java，JS高级程序设计，Django web 开发指南,但是图书馆的阅览室没开门...我想吐槽的是，既然通知上写着今天开学，图书馆全面开放，那你就开个自习室（室友考研早起去占座了...）叫做全面开放？做不到开放阅览室，在公告你就不要写全面开放，写出来又做不到，还我白跑一趟..这么多书，几个月之内努力看完，尽量消化~开启学霸模式，爱编程，爱生活~</p>
+  <h5>Every damn day,just do IT</h5>
+  <p>
+  先扯扯常用的那几个编码吧，查资料做笔记了~<br>
+  <strong>UTF-8:</strong>是一种针对Unicode的可变长度字符编码，又称万国码，用在网页上可以同一页面显示中文简体繁体及其它语言（如日文，韩文），但是这种编码的体积比较大，占用的电脑空间会大一点。当然现在电脑的性能来说，完全扛得住，而且UTF-8能够保存包括中文的所有字符，对英文的只是也很好，所以，个人也一般倾向于页面编码统一用UTF-8，省事。<br>
+  <strong>GB2312:</strong>ASCII码的中文扩展，可以表示6000多个常用汉字。 <br>
+  <strong>GBK:</strong>汉字实在是太多了，包括繁体和各种字符，于是产生了 GBK 编码，它包括了 GB2312 中的编码，同时扩充了很多，共收录了21003个汉字。<br> 
+  <strong>ISO-8859-1:</strong>又称Latin-1或"西欧语言"，是国际标准化组织内ISO/IEC 8859的第一个8位字符集，支援部分于欧洲使用的语言。就比如我们在myeclipse下新建jsp文件默认的就是这个编码，
+  </p>  
+  <p>切入正题：乱码问题。之前在js向jsp传中文值的时候总是出现乱码的情况如下：</p>
+  <code>
+  &lt;script type="text/javascript"&gt; <br>
+function send(){   <br>
+ var vau="测试";    <br>
+ window.location.href="js.jsp?para="+vau;  <br>
+}
+&lt;/script&gt;
+  </code>
+ <p>服务器端接收参数当然是用的request对象咯~
+ <br>
+ <code>
+ &lt;%String jsmessage=request.getParameter("para");%&gt;
+ </code> <br>
+ 页面的编码是UTF-8，然后就华丽丽的乱码了。
+ </p> 
+  <p>之后的在Ajax的callback函数URL传中文值也出现了同样的问题：</p>
+  <code>
+ &lt;script&gt; 
+ function first&(){  <br>
+  var para="丽宝";     <br>
+ loadXMLDoc("math1.jsp?username="+para,function(){  <br>
+ if(xmlhttp.readyState==4 && xmlhttp.status==200){             <br>
+ document.getElementById("myDiv").innerHTML=xmlhttp.responseText;  <br>
+ }  <br>
+ }); <br>
+}   <br>
+&lt;/script&gt;
+  </code>
+ <p>网上找了很多资料，最终解决了这个问题：使用JS的encodeURL函数：<strong>把字符串作为 URI 进行编码</strong><br>
+ 即：<br>
+   <code>
+ &lt;script&gt; 
+ function first&(){  <br>
+  var para="丽宝";     <br>
+ loadXMLDoc("math1.jsp?username="+encodeURI(para),function(){  <br>
+ if(xmlhttp.readyState==4 && xmlhttp.status==200){             <br>
+ document.getElementById("myDiv").innerHTML=xmlhttp.responseText;  <br>
+ }  <br>
+ }); <br>
+}   <br>
+&lt;/script&gt;
+  </code>
+ <br>
+ 然后服务器端的request的接受这样写：
+ <code>String name=new String(request.getParameter("username").toString().getBytes("ISO-8859-1"),"UTF-8");</code><br>
+ //注释：Tomcat对于GET请求并不会考虑使用request.setCharacterEncoding方法设置的编码，而会永远使用iso-8859-1编码，所以之前试过的的：
+  <code>request.setCharacterEncoding("utf-8");</code><br>
+  这个方法是无效的。<br>
+  测试页面使用的编码均是UTF-8，个人倾向这个编码~后来吧math1.jsp的编码改成GBK和GB2312，结果还是没有乱码。前面的js向jsp传值乱码的问题以此类推，也是这样解决滴。         
+ </p>
+ <p>关于编码的问题，以及乱码，以后就补在这篇文章了，补两个学习链接：<br>
+ <a href="http://www.cnblogs.com/dodohua/archive/2011/03/08/1977367.html" target="_blank">java乱码问题</a> <br>
+ <a href="http://www.chinaz.com/web/2012/1119/282540.shtml" target="_blank">网页编码就是那点事</a>
+ </p>
   <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
