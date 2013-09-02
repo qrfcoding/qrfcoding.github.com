@@ -16,7 +16,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 #container{
 	height:100%;
     width:100%;
-	min-height:1500px;
+	min-height:2300px;
 	min-width:1340px;		
    		 }
 	 
@@ -155,7 +155,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	}	
 	
 #pages{
-	
+	min-height:2210px;
 	margin-top:5%;
 	margin-left:13%;
 	text-align:left;
