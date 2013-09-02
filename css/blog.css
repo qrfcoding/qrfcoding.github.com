@@ -22,11 +22,13 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	 
 #left{
 	float:left;
-	height:100%;
+	position:relative;
+	height:auto;
 	width:21%;	
-	min-height:1500px;
+	min-height:2300px;  /*如何通过CSS让left的background的图片随右侧的pageauto垂直重复？现在只能通过min-height这个属性，让left尽量长，不让文章的尺寸超过，没做到自适应唉*/
 	background:url(../images/bg-ramp.jpg);
-	background-repeat:repeat-y;			
+	background-repeat:repeat-y;	
+		
 	}
 #logo{
 	height:120px;
@@ -115,10 +117,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	  width:75%;
 	  margin:0px;	
 	  float:right;
-	  background:#F7F7F7;
-	 
-
-	 
+	  background:#F7F7F7;	 
 	}
 
  /*右侧header部分*/	
