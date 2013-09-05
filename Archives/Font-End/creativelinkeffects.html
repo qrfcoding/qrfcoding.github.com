@@ -6,47 +6,50 @@
 <meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
 <meta name="description" content="Blog Power By QRF">
 <link rel="shortcut icon" href="favicon.ico" />
-<title>关于Github Pages</title>
-<link   href="../../css/blog.css" type="text/css" rel="stylesheet">
+<title>Creative Link Effects</title>
+<link  href="../../css/blog.css" type="text/css" rel="stylesheet">
 <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<script type="text/javascript"  src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.js"></script>
 <script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
 <!--others-->
+<style>
+
+</style>
 
 </head>
 <body>
 <div id="container">
 <div id="left">
-   <div id="logo"><!--logo 熏--></div>
+   <div id="logo"></div>
    <!---介绍div-->
 <div id="introduce">     
        
     <div id="sort" class="left">
-    <a href="../../index.html"><span>归&nbsp;档</span></a>
+    <a  href="../../index.html"><span>归&nbsp;档</span></a>
     </div>
     
      <div id="about" class="left">
-     <a  href="../aboutme.html" <span>关&nbsp;于&nbsp;我</span></a>
+     <a  href="../aboutme.html"><span>关&nbsp;于&nbsp;我</span></a>
     </div>
     
       <div id="contact" class="left">
-     <a href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
-    </div> 
+     <a  href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div>  
     
      <div id="latest" class="left">
-    <a href="../Links.html"><span>友情链接</span></a>
+    <a  href="../Links.html"><span>友情链接</span></a>
     </div>
-     
+    
 </div>
- 
+   
    <!--calendar-->
   <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
-  
+   </br></br>
 
 </div>
 
   <div id="content">
-  
    <div id="header">
      <div id="header_left">
         <input type="image" src="../../images/hidden.jpg" id="hidden" onclick="hide()" >
@@ -85,25 +88,15 @@
      </ul>    
       </div>
  </div>
-  
-  <!--文章-->
+ <!--文章-->
  <div id="pages">
- <a>关于Github Pages</a>
- <span class="category-tag">[其他]</span>
-   <span class="date">08月 21日</span>
- <p>廉价的姓名域名，免费的Github主机，如此如此这般这般，就有了这个Blog，无论你看或者不看，我都在这里，爱编程，爱生活。</p>
- <p>刚刚开始接触Github，全英文，很排斥，一段时间后习惯就好</p>
- <p>折腾git,各种命令，果然是因为习惯图形化界面的操作，这个得改</p>
- <p>查阅了很多前端性能最佳实践的博文和资料，不过针对这个小小的静态blog却还是用到不多，或者说没必要</p>
- <p>页面css,js基本手写和仿照，稍微用了Bootstrap</p>
- <p>以后的博文果然还是得采用Markdown,以及Jekyll</p>
- <p>今天在同学的大屏显示器上访问自己的站点的时候，发现width就不够宽了，右边出现了些许的空白显然的是height也不够了，所以background没有覆盖整个屏幕，其实当初已经想到这问题，不过到底没怎么认真去解决，还是要做到自适应网页设计啊~~</p>
- <p>本想着在页面左侧加上RevolverMaps的，显得更加高端大气上档次一点，想想还是算了。一是，页面看起来简洁整齐就是最好的设计。二是随着首页的DOM节点的增加，虽然是静态页面，但是页面的加载速度还是受到一定影响。CSS，JS文件没有做压缩处理，想着近期可能会改动呢。再者，已经加上Google Analytics了，RevolverMaps就显得没那么必要了。
- </p>
- <p>基友艾和TJ同学都说这个blog稍微的简陋粗糙了一点，好忧桑~不会设计，做不到2D。好吧，慢慢改的花哨点，虽然我认为简约点蛮好的。</p>
- <p>鉴于个人水平有限，觉得有些外文网站如<a title="codrops" href="http://tympanus.net/codrops/">Codrops</a>的文章不错，好吧，会稍微翻译转载一下，当然也当是练习英语咯。</p>
-  <p>如此如此，这般这般.....持续更新....</p>
-  <div id="disqus_thread"></div>
+   <p>
+   <a>[译]Creative Link Effects</a>
+   <span class="category-tag">[前端]</span>
+   <span class="date">09月 5日</span>
+   </p>
+  
+   <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
@@ -117,10 +110,10 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
- </div><!--pages-->
-    </div> <!--content-->
+        
+    </div><!--pages-->
+     </div> <!--content-->
 </div>
-<script type="text/javascript"  src="../../js/display.js"></script>
 <script type="text/javascript">
         var date = new Date();
         var mapping = [];
@@ -130,7 +123,10 @@
 
         Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
 </script>
- </script>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
 <!--DISQUS-->
     <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -143,6 +139,7 @@
         s.src = '//' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
-    </script>  
+    </script>
+    
 </body>
 </html>

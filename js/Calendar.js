@@ -1,5 +1,4 @@
-﻿// 代码整理：懒人之家
-function DateLinkMapping(date, link) {
+﻿function DateLinkMapping(date, link) {
     this.Date = date;
     this.Link = link;
 }

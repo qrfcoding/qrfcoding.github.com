@@ -46,7 +46,6 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	height:220px;      /*为什么改变成百分比没有效果，而px还是有效。。。*/
 	width:170px;
  	margin-left:45px;
-	
 	}	
 
 #introduce a{
@@ -85,8 +84,48 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	 height:20px;
 	 width:90%;
 	}
+/*Creative Link Effects*/
+.left a::before,
+.left a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.left a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.left a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.left a:hover::before,
+.left a:hover::after,
+.left a:focus::before,
+.left a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+	
+
 
 /*日历*/	
+#calendar{
+	margin:10% auto;
+	}
 .prevMonth, .nextMonth {
 	color: Gray;
 }
