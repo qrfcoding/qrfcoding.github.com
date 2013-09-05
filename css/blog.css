@@ -156,7 +156,8 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	  width:75%;
 	  margin:0px;	
 	  float:right;
-	  background:#F7F7F7;	 
+	  background:#F7F7F7;	
+	 
 	}
 
  /*右侧header部分*/	
@@ -201,8 +202,27 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	width:70%;
 	height:auto;
 	
-
 	}
+	
+/*回到顶部按钮*/
+.button{
+    position:fixed;
+	bottom:0px;	
+    right:10px;
+    background:url(../images/top.png) no-repeat 15px 12px;
+    background-color: #888;
+    width: 45px;
+    height: 45px;
+    cursor: pointer; 
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+
+}
+.button:hover{
+    background-color: #999;
+	}
+	
 #footer{
     position:absolute;    /**IE6b不支持fixed**/
     bottom:0;           /**如何让fooert底部居中**/

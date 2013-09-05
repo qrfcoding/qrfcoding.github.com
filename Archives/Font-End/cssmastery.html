@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
+<html lang="zh-cn"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
@@ -12,6 +11,7 @@
 <script type="text/javascript" src="../../js/jquery.js"></script>
 <script type="text/javascript" src="../../js/Calendar.js"></script>
 <script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script src="../../js/backtop.js"></script>
 <!--others-->
 <style>
 #tittle1{
@@ -87,8 +87,8 @@ span#words{
   <div id="content">
    <div id="header">
      <div id="header_left">
-        <input type="image" src="../../images/hidden.jpg" id="hidden" onclick="hide()" >
-       <input type="image" src="../../images/hidden.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+        <input type="image" src="../../images/left.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/right.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
      </div>
     &nbsp;
      <div id="header_right">
@@ -169,6 +169,10 @@ span#words{
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
     </div><!--pages-->  
+    
+      <!--backtop-->
+ <div id="btn" class="button" onclick="backTop()"></div>
+ 
    </div> <!--content-->
 </div>
 <script type="text/javascript">

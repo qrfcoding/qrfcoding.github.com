@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
+<meta name="description" content="Blog Power By QRF">
+<link rel="shortcut icon" href="favicon.ico" />
+<title>我眼中的的技术高手</title>
+<link   href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript"  src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="../../js/backtop.js"></script>
+<!--others-->
+
+</head>
+<body>
+<div id="container">
+<div id="left" style="min-height:2800px; ">
+   <div id="logo"><!--logo 熏--></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a href="../../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="../aboutme.html" <span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div> 
+    
+     <div id="latest" class="left">
+    <a href="../Links.html"><span>友情链接</span></a>
+    </div>
+     
+</div>
+ 
+   <!--calendar-->
+  <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
+  
+
+</div>
+
+  <div id="content">
+  
+   <div id="header">
+     <div id="header_left">
+        <input type="image" src="../../images/left.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/right.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+     </div>
+    &nbsp;
+     <div id="header_right">
+         <ul id="header_right_nav">
+         <!-- <li> <a href="blog.html"><input type="image" src="images/home.png" name="pre"></a></li> -->
+          <li>
+       <div id="header_clock">
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="170" height="50" id="FlashID" title="clock">
+           <param name="movie" value="../../flash/clock.swf">
+           <param name="quality" value="high">
+           <param name="wmode" value="opaque">
+           <param name="swfversion" value="9.0.45.0">
+           <param name="expressinstall" value="Scripts/expressInstall.swf">
+           <!--[if !IE]>-->
+           <object type="application/x-shockwave-flash" data="../../flash/clock.swf" width="170" height="50">
+             <!--<![endif]-->
+             <param name="quality" value="high">
+             <param name="wmode" value="opaque">
+             <param name="swfversion" value="9.0.45.0">
+             <param name="expressinstall" value="Scripts/expressInstall.swf">
+             <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+             <div>
+               <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+               <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+             </div>
+             <!--[if !IE]>-->
+           </object>
+           <!--<![endif]-->
+         </object>
+       </div>
+         </li>
+     </ul>    
+      </div>
+ </div>
+  
+  <!--文章-->
+ <div id="pages" style="min-height:2760px;">
+ <a>[转]我眼中的的技术高手</a>
+ <span class="category-tag">[观点]</span>
+   <span class="date">09月 05日</span>
+  <blockquote>
+  <p>本文来自淘宝工程师:<a title="玉伯也叫射雕" href="http://weibo.com/1748374882/zoavsuWAz" target="_blank">玉伯也叫射雕</a></p>
+  <p> 原文地址：<a title="Github" href="https://github.com/lifesinger/lifesinger.github.com/issues/126" target="_blank">Github</a>-----以下是正文</p> 
+  </blockquote>
+  <p>今天发了一条微博：</p>
+  <blockquote>
+  <p class="muted">会原生 JavaScript 不代表什么，懂 jQuery、YUI 等才真正好。怎么这么多人有原生主义情结呢？走出那点小天地，海阔天高。</p>
+  </blockquote>
+  <h3>奇怪的现象</h3>
+  <p>平时工作，时不时能听到一些困惑、感慨：</p>
+  <blockquote>
+  <p class="muted">Query 虽好，但只会 jQuery，不会原生 JS 是不被大公司认可的。</p>
+  <p class="muted"> 最近半年对原生 JS 有些生疏，得补一补。</p>
+  <p class="muted">得好好看看 ECMAScript 规范，把 JS 语言学透彻。</p>
+  </blockquote>
+  <p>和原生情结对应的，是国内程序员特别喜欢研读源码，比如：</p>
+   <blockquote>
+  <p class="muted">jQuery 源码分析系列</p>
+  <p class="muted"> YUI 源码分析</p>
+  <p class="muted">Backbone 及 Underscore 源码解析</p>
+  </blockquote>
+  <p>国内程序员对源码的热衷，可以拿 SeaJS 的数据来看：</p>
+  <img src="fork1.jpg">
+  <p>fork 数高达 500 多，但 watch 数只有 1000 多，这其实是不正常的。相比而言，RequireJS 的数据正常很多：</p>
+  <img src="fork2.jpg">
+  <p>简言之，国内与国外相比，有比较明显的两个特点：</p>
+  <p>
+ 1.对原生 JS 的学习心更强。<br>
+ 2.对类库、框架的源码更感兴趣。 
+  </p>
+  <p>这两点看起来很好，可是：</p>
+  <p>
+  1.研究原生 JS 的优秀文章，大都出自国外程序员。<br>
+  2.类库、框架，国人好像一直在研究，鲜有产出。
+  </p>
+  <p>这肯定跟我们是社会主义国家有关，但我越来越怀疑这一点。</p>
+  <h3>语言高手们</h3>
+  <p>真正的语言高手不多，我不是，正在看这篇文章的你，很可能也不是，而且这一辈子可能都和我一样成为不了语言高手。</p>
+    <p>JavaScript（纯语言，不含 DOM 等）高手，在国内屈指可数。周爱民、白露飞、老赵、winter、月影、hax 等等等等，还有一些非常低调的隐士，这些人读 ECMAScript 规范像磕瓜子一样轻松，甚至能花几个晚上就像 BE 大神一样造出一门新语言来。你我等闲之辈，除了佩服之外，只能去谈恋爱。</p>
+      <p>工作中，我们需要语言高手吗？肯定的说，需要！可是，我们需要大量语言高手吗？除了特殊岗位，我相信很多公司都不需要！</p>
+        <p>题外话：目前为人知的 JS 语言高手里，除了周爱民，我最看好白露飞。这是一个有能力也有潜力造就 SuperScript 的人，最佩服的是他有实际行动，虽然方向未必正确。</p>
+   <h3>我们的价值在哪</h3>
+   <p>除了重新投胎，我们大部分人这辈子都不大可能有兴趣、有能力、有机缘去成为 BE 大神了。这是个残酷的现实，之所以残酷，只因视野太狭窄。</p>
+    <p>跳出来，天大地大。妹子多着呢，而且更漂亮。</p>
+      <p>Douglas Crockford 的 JS 能力很可能不及 winter，但 Douglas 规范并布道了 JSON 格式，天下留名，惠泽全球。</p>
+        <p>Jeremy Ashkenas 的 JS 能力可能还不如老赵，但 Jeremy 用很裸的代码写就了 Backbone，至少影响了一万人，给各个公司创造的价值总额很可能过千万美刀。</p>
+         <p>更不用说 Isaac Z. Schlueter，这小伙的 JS 功力很可能还不如我，但 Isaac 打造了 npm 生态圈，而我至今只有精力玩玩 Ant 和 Grunt。</p>
+          <p>有幸还看过 Google Docs 的前端源码，那代码和 Java 一样中规中矩。但在 RTE 领域，Google Docs 是王者，里面的专利都一堆一堆的……</p>
+            <p>特别想提及的还有开发 Evernote Clearly 的前端工程师，这小伙子的代码，我眼睁睁看着其从很生涩的 JS 代码，逐步演化成上万行牛逼代码还保持了相当好的可维护性。这份代码就像 Clearly 产品一样奕奕生光。</p>
+             <p>以及把 jQuery 用得出神入化的 Amazon！前不久那个秒杀国内互联网公司的悬浮菜单，可不是研究原生 JS 能想出来的。</p>
+              <p>还有 Facebook 的工程师们，Twitter 的工程师们…… 这些故事大家并不陌生。</p>
+    <h3>不是总结的总结</h3> 
+    <p>不贬低语言高手们，也不反对去研究编译原理、ECMAScript 规范等。作为技术人员，我们需要这种精神。但是，这仅仅是很小很小很小很小很小的一个领域。并且在这个领域里，永远有比你更聪明的人。</p>
+    <p>具体对 JavaScript 语言来说，会用就好。搞清楚数据类型、作用域、闭包、原型链等基本概念，足矣。再深入进去，对绝大部分人来说，除了能满足下心理上的优越感，对实际工作不会有任何实质性帮助。</p>  
+    <p>语言的本质和互联网一样，只是工具，是剪刀、石头、布。让张小泉去研究怎么做剪刀就好，我们用好剪头，去剪出各种窗花，更有意思。还有一个有趣的事实是，张小泉会造剪头，但剪不好窗花。</p> 
+     <p>跳出很小很小很小很小很小的语言领域之外，天大地大。永远不要妄自菲薄，每个人身上都背负着独特的使命。去努力寻找自己的，不要老盯着别人的，否则就会成为观众。</p>
+     <p>好像跑题了。前面那个奇怪的现象，还有很多想吐槽的点。比如</p>  
+     <p>
+     <p>1.源码只是很小很小的一部分。直接读源码往往无法领会类库框架的精髓。不读源码，用心去用，用时间去体味，偶尔针对性看看源码，往往更能掌握一个类库框架的真谛。</p>
+     2.对社区的贡献可以有很多很多。你的使用经验、用心的 bug 提交、入乡随俗的 pull request、一个认真的评论等等，这些都比去研究什么狗屁源码更有价值。</p>
+     3.一个 Java 高手如果说他会原生 Java，那一定会遭来很多人的围观。我还会谭浩强教我的 C 呢，那几个 if else 还有结构体、指针等谁不会。语言之外的领域知识，才真正造就了高手。对于前端来说，会原生 JS 只能打 20 分，另外 40 分需要你深入使用 CSS、DOM、HTML5 等领域知识，还有 20 分需要你对业务需求、架构设计等有真正的运用，这已经 80 分了，不要太贪心。剩下 20 分，只有两个字：勤奋。
+     </p>   
+    <hr>
+    <p>个人观点：勤奋而已，研究源码有时也有助于理解，程序员之路~~</p>        
+           
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+ </div><!--pages-->
+ 
+ <!--backtop-->
+ <div id="btn" class="button" onclick="backTop()"></div>
+ 
+    </div> <!--content-->
+</div>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+ </script>
+<!--DISQUS-->
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>  
+</body>
+</html>
