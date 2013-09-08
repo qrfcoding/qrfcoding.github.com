@@ -238,3 +238,14 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 #pages a:hover {color:#9c6;}
 span.date{ color:rgba(0,0,0,0.3); display:block; }	
 span.category-tag{color:rgba(0,0,0,0.3);}	
+
+/*外部链接--external link样式，属性选择器*/
+a[href^="http:"] {
+	background:url(../images/externalLink.gif) no-repeat right top;
+	padding-right:10px;	
+	}
+
+a[href^="mailto:"] {
+	background:url(../images/email.png) no-repeat right top;
+	padding-right:15px;	
+	}

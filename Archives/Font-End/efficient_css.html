@@ -6,7 +6,7 @@
 <meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
 <meta name="description" content="Blog Power By QRF">
 <link rel="shortcut icon" href="favicon.ico" />
-<title>高效的CSS</title>
+<title>一些CSS</title>
 <link  href="../../css/blog.css" type="text/css" rel="stylesheet">
 <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script type="text/javascript" src="../../js/jquery.js"></script>
@@ -15,14 +15,18 @@
 <script src="../../js/backtop.js"></script>
 <!--others-->
 <style>
-.button {
+.button1{
     border: solid 1px #000;
     color: #0029FF;
 }
-.button1 {
+.button2 {
     .button();
-    color: #33CC00; /**换个字体的颜色**/
+     color: #33CC00;  /**换个字体的颜色**/
 }
+li{
+	padding:4px;
+	margin-top:10px;}
+
 </style>
 
 </head>
@@ -99,11 +103,11 @@
  <!--文章-->
  <div id="pages">
    <p>
-   <a>高效的CSS</a>
+   <a>一些CSS</a>
    <span class="category-tag">[前端]</span>
    <span class="date">08月 23日</span>
    </p>
-   <p>最近学习的一些CSS~~</p>
+     <h4>一些概念：</h4>
    <p>通常情况下，大多数开发人员没有考虑过CSS效率问题。CSS的效率反映在页面渲染上，如果模式低效，应用程序在浏览器上运行就会很慢。关于渲染，顺带一提的是，为什么div布局会如此受到青睐相对于table布局?
    <p>首先，HTML使用的是flow based layout，也就是流式布局，所以，如果某元件的几何尺寸发生了变化，需要重新布局，也就叫reflow，所以table不觉如果某个元件发生变化，将会导致整个table重新的reflow，这显然是低效率的一件事情。</p>
    <p>更多关于浏览器的渲染原理，参照陈浩老师的一篇博文：<a href="http://coolshell.cn/articles/9666.html" target="_blank">浏览器的渲染原理简介</a></p>
@@ -130,18 +134,46 @@
     color: #FFF; 
 }</code></p>
    <p>实例如下：</p>
-    <button class="button"  type="button">test1</button>  <br>
-    <button class="button1"  type="button">test2</button>
-    <p>好吧，测试无效，CSS的选择符我所知道的也就：元素选择符，关系选择符，属性选择符，伪类选择符。不知道这种写法是从何而来，当然如果可以这样复用的CSS也是很好的。以后再深究下这个问题吧，人的学习总是一步一步来的~~</p>
-    <p>关于<strong>CSS表达式</strong>：CSS表达式可以动态的设置CSS属性，在IE5-IE8中支持，其他浏览器中表达式会被忽略。例如下面表达式在不同时间设置不同的背景颜色。</p>
+        <button class="button1"  type="button">test1</button>  
+         <button class="button2"  type="button">test2</button>
+    <p>好吧，测试无效，CSS的选择符我所知道的也就：元素选择符，关系选择符，属性选择符，伪类选择符。不知道这种写法是从何而来,其实呢，只要添加多个选择器不也是有一样的效果嘛，比如：<code>class="button color"</code>类选择器button和color都是作用于这个按钮元素，只要在.color中设置改变颜色，效果也是一样的。</p>
+     <hr style=" border-bottom-color:#C96;">
+    <h4>关于CSS表达式</h4>
+    <p>CSS表达式可以动态的设置CSS属性，在IE5-IE8中支持，其他浏览器中表达式会被忽略。例如下面表达式在不同时间设置不同的背景颜色。</p>
     <code>
     background-color: expression( (new Date()).getHours()%2 ? "#B8D4FF" : "#F08A00" );
      </code>
 
-   <p><strong>在CSS中，height和width指的是内容区域的高度和宽度，增加内边距，边框，外边距不会影响内容区域的尺寸，但是会改变元素框的尺寸大小</strong></p>
-   <p>IE和盒模型：IE的早期版本，包括让人蛋碎的IE6，这些浏览器的width属性不是内容的宽度，而是内容，内边距，边框的宽度总和。其实吧，这种盒模型我觉得更加符合的逻辑，可是不符合标准规范便是了。
-   <p>只有在普通文档流的块框的垂直外边距才会发生外边距叠加。行内框，浮动框，绝对定位框之间的外边距不会叠加。</p>
-   
+   <hr style=" border-bottom-color:#C96;">
+   <h4>一些常识：</h4>
+   <ul>
+   <li>在CSS中，height和width指的是内容区域的高度和宽度，增加内边距，边框，外边距不会影响内容区域的尺寸，但是会改变元素框的尺寸大小</li>
+   <li>IE和盒模型：IE的早期版本，包括让人蛋碎的IE6，这些浏览器的width属性不是内容的宽度，而是内容，内边距，边框的宽度总和。其实吧，这种盒模型我觉得更加符合的逻辑，可是不符合标准规范便是了。</li>
+   <li>只有在普通文档流的块框的垂直外边距才会发生外边距叠加。行内框，浮动框，绝对定位框之间的外边距不会叠加。</li>
+   <li>浮动会让元素脱离文档流，不再影响不浮动的元素，但是框的文本会受到浮动元素的邮箱，会移动以留出空间。实际上，创建浮动框使文本可以围绕图像,如下：</li>   
+   <img src="../../images/logo.jpg" style="float:left; height:100px;">
+   <p class="muted">
+     &hearts;&hearts;<br>
+   走着走着， 就散了， 回忆都淡了；<br>
+   看着看着， 就累了， 星光也暗了；<br>
+   听着听着， 就醒了， 开始埋怨了；<br>
+   回头发现， 你不见了， 突然我乱了。<br> 
+   在失去时后悔， 为什么没有抓住。 其实等待本身就是一种可笑的错误。<br>
+   明知道等待着一份不知能否到来的幸福··· 
+   </p>
+   <li>假设有两个元素，一个向左float，一个向右，d要想让div元素包围他们，该怎么做呢？因为浮动元素不占据空间，所以容器元素不包围他们。
+   <p>方法一：添加一个进行清理的元素可以迫使容器元素包围浮动元素。内联样式代码在页面内，<code> &lt;br style="clear:both"&gt;</code>效果如下：
+   <div style="background:#CFC;">
+      <div style="float:left; border:1px solid #C39;height:50px;width:50px;">left</div>
+      <div style="float:right; border:1px solid #09F;height:50px;width:50px;">right</div>
+      <br style="clear:both">
+   </div>
+   <p>这里没有显式的设置包含元素的高度和宽度，只是强制让容器包含浮动元素，如果设置了包含元素的高度和宽度呢？答案当然是即使是浮动元素也会被包含到容器当中，亲可以自己试试~~</p>
+   <p>方法二：当然你也可以选择让包含容器元素也浮动起来，只是这会让整体的布局变得稍微复杂点。</p> 
+   <p>方法三：使用overflow，这会自动清理包含的任何浮动元素，当然，这个方法会在某些情况下产生滚动条或截断内容。</p>
+   </li>
+   </ul>
+  
    </p>
     <p>持续更新一些看到到的学到的CSS相关知识~啦啦 Stay hunger,Stay foolish.</p>
 
