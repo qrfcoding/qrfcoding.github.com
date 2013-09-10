@@ -3,7 +3,6 @@
 CSS Document
 Author:QRF
  */
-
 body{
 	margin:0px;   /* 使用reset，并非全局reset */
 	padding:0px;   /* body换成"*"便是全局reset  */
@@ -153,7 +152,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	  position:relative; /**设置定位属性，但是不设置偏移属性，为子元素定位提供基准，如footer子div**/
 	  height:100%;
 	  min-height:1500px;
-	  width:75%;
+	  width:79%;
 	  margin:0px;	
 	  float:right;
 	  background:#F7F7F7;	
@@ -165,8 +164,8 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	position:fixed;
 	margin-top:0px;
 	height:60px;
-	width:78%;
-   		
+	width:79%;
+	
 	}	
 #header_left{
 	float:left;
@@ -197,11 +196,11 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 #pages{
 	min-height:2210px;
 	margin-top:5%;
-	margin-left:13%;
+	margin-left:12%;
 	text-align:left;
-	width:70%;
+	width:72%;
 	height:auto;
-	
+		
 	}
 	
 /*回到顶部按钮*/
