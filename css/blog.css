@@ -12,6 +12,11 @@ body{
 
 html{ font-family:Arial, Helvetica, sans-serif;}	
 	
+@font-face{
+	font-family: "Margarine";
+	src:url(../font/Margarine-Regular.ttf) format('truetype');
+}
+	
 #container{
 	height:100%;
     width:100%;
@@ -53,6 +58,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	}	 	
 
 #latest{
+	
 	margin-top:30px;
 	text-align:center;
 	 font-size:18px;	
