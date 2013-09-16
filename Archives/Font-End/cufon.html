@@ -15,40 +15,25 @@
 <script src="../../js/backtop.js"></script>
 <!--others-->
 <style>
-#sprite li{ display:inline-block;
-          list-style:none;
-		  margin-left:30px;
-		          
-          }
-
-#longzhu {    
-    height:75px;
-	width:204px;
-	background:url(eyes.jpg) 0px 0px; 
-
-}
-
-#haizei {    
-    height:75px;
-	width:204px;
-	background:url(eyes.jpg) 0px -82px; 
-
-}
-
-#sishen { 
-  
-    height:75px;
-	width:204px;
-	background:url(eyes.jpg) 0px -155px; 
-
-}
-#huoyin { 
-  
-    height:72px;
-	width:204px;
-	background:url(eyes.jpg) 0px -228px; 
-
-}
+#pages li{
+	padding:5px;
+	font-size:1.2em;
+  	}
+	
+#cod{
+	border:1px solid #999;
+	background-color:#FAFAFA;
+	}	
+#code {	
+	list-style-type:decimal;
+	color:#66CCFF;
+	font-size:
+	}
+#code li{
+	font-size:1.2em;
+	border-left:1px solid #999;	
+	display:list-item;		
+	}		
 </style>
 
 </head>
@@ -130,7 +115,26 @@
    <span class="date">09月 10日</span>
    </p>
    <p><strong>简介：</strong> 本文介绍了使用 Cufon 进行网页字体渲染的一般方法和技巧，并以此为基准，介绍了 Cufon 技术的主要实现原理和这一原理的可能应用领域</p>
-
+   <blockqute>
+   <p>这是一篇关于 Cufon 技术的小文章。什么是 Cufon 呢？简单的说，Cufon 是一个用来替代 sIFR 框架，实现在网页中对文字字体进行渲染功能的纯 JavaScript 开源类库。补一下一些基础,搜集了个人遇到的一些网页字体渲染解决方案：
+   </p>   
+   <h4>网页字体渲染的解决方案</h4>
+   </blockquote>
+   <ul style="list-style-type:decimal;">
+   <li>通过 @font-face 引入外部字体:</li>
+   <div id="cod">
+      <ul id="code">
+        <li> <code>@font-face { </code> </li>
+        <li> <code>font-family: "Baroque Script";</code> </li>
+        <li> <code>src: url('BaroqueScript.ttf')</code> </li>
+        <li><code>}</code></li>
+      </ul> 
+    </div>  
+   <li>Google font API</h5></li>
+   
+    <li>Cufon</li>
+   </ul>
+   
     <hr  style=" border-bottom-color:#C96;">  
 <!-- Baidu Button BEGIN -->
 <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
