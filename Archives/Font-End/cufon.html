@@ -6,7 +6,7 @@
 <meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
 <meta name="description" content="Blog Power By QRF">
 <link rel="shortcut icon" href="favicon.ico" />
-<title>使用 Cufon 渲染网页字体</title>
+<title>网页字体渲染</title>
 <link  href="../../css/blog.css" type="text/css" rel="stylesheet">
 <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script type="text/javascript" src="../../js/jquery.js"></script>
@@ -110,11 +110,22 @@
  <!--文章-->
  <div id="pages">
    <p>
-   <a>使用 Cufon 渲染网页字体</a>
+   <a>网页字体渲染</a>
    <span class="category-tag">[前端]</span>
    <span class="date">09月 10日</span>
    </p>
-   <p><strong>简介：</strong> 本文介绍了使用 Cufon 进行网页字体渲染的一般方法和技巧，并以此为基准，介绍了 Cufon 技术的主要实现原理和这一原理的可能应用领域</p>
+    <blockquote>
+    <p>注：这里的字体渲染的都是英文字体，关于中文网络字体的渲染，呃，这个比较复杂...之前还傻乎乎的以为中英文是一样的，就比如使用font-face的中文没有渲染在Bootstrap官方群问人也没人告知...无奈自己大Google.....
+    <ul style="list-style-type:decimal">
+    <li>字体太大，在当前国内的网络带宽环境下，使用中文网络字体不太现实；</li>
+      <li>版权问题，绝大部分优秀的中文字体，都不是免费的；</li>
+        <li>商业模式陈旧，没有与时俱进。</li>
+    </ul>
+    附上几个链接:<br>
+    <a href="http://www.solagirl.net/cufon%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html">Cufon中文解决</a><br>
+    <a href="http://www.qianduan.net/google-font-api-web-font-and-chinese.html">Google font api、web font与中文</a>
+    </blockquote>
+    <p><strong>简介：</strong> 本文介绍了使用 Cufon 进行网页字体渲染的一般方法和技巧，并以此为基准，介绍了 Cufon 技术的主要实现原理和这一原理的可能应用领域</p>
    <blockqute>
    <p>这是一篇关于 Cufon 技术的小文章。什么是 Cufon 呢？简单的说，Cufon 是一个用来替代 sIFR 框架，实现在网页中对文字字体进行渲染功能的纯 JavaScript 开源类库。补一下一些基础,搜集了个人遇到的一些网页字体渲染解决方案：
    </p>   
@@ -131,8 +142,24 @@
       </ul> 
     </div>  
    <li>Google font API</h5></li>
-   
+    <p>方便简单，个人比较喜欢，你可以把字体download下来，再用font-face<br>
+    <img src="googleapi.jpg">
+    <p>如果链接网络的话也可以直接：<br>
+    <code>
+    &lt;link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'&gt;
+     </code>
+     <br>
+     然后：
+     <br>
+     <code>
+     font-family: 'Belleza', sans-serif;
+     </code>
+    <p> 具体的官网吧：http://www.google.com/fonts
     <li>Cufon</li>
+    <p>关于cufon，不想多说什么，很多年前的技术，我还当个宝....不能渲染中文，要你何用。<br>
+   一片IBM的文章：<br>
+   <a href="http://www.ibm.com/developerworks/cn/web/0911_zhuzh_cufon/">使用 Cufon 渲染网页字体</a>
+    </p>
    </ul>
    
     <hr  style=" border-bottom-color:#C96;">  
