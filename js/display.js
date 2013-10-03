@@ -1,3 +1,9 @@
+window.onload=function(){
+	console.log('%s', '你不自知的落下一地温柔，我懵然拾起却再也不能放下');
+	console.log('%s', 'Shmily');
+    console.log('%c', 'background-image:url(http://qiurifeng.org.cn/images/july.jpg)');
+	
+	}
 //左侧伸展按钮
 function hide(){
 	document.getElementById("display").style.display="inline"; //显示开始设置为隐藏的display按钮
