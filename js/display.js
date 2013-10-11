@@ -1,7 +1,7 @@
 window.onload=function(){
 	console.log('%s', '你不自知的落下一地温柔，我懵然拾起却再也不能放下');
 	console.log('%s', 'Shmily');
-       console.log('%c  ', 'font-size:364px;background-image:url(http://qiurifeng.org.cn/images/july.jpg)');
+    console.log('%c', 'font-size:364px;background-image:url(http://qiurifeng.org.cn/images/july.jpg)');
 	
 	}
 //左侧伸展按钮
