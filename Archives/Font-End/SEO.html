@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
+<meta name="description" content="网站搜索设计，兼顾SEO及可用性的网站设计心得">
+<link rel="shortcut icon" href="favicon.ico" />
+<title>When Search Meets Web Usability</title>
+<link   href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript"  src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="../../js/backtop.js"></script>
+<!--others-->
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"><!--logo 熏--></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a href="../../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="../aboutme.html" <span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div> 
+    
+     <div id="latest" class="left">
+    <a href="../Links.html"><span>友情链接</span></a>
+    </div>
+     
+</div>
+ 
+   <!--calendar-->
+  <div id="calendar" style="width:180px; height:180px; margin:0 auto;"> </div>
+  
+
+</div>
+
+  <div id="content">
+  
+   <div id="header">
+     <div id="header_left">
+        <input type="image" src="../../images/left.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/right.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+     </div>
+    &nbsp;
+     <div id="header_right">
+         <ul id="header_right_nav">
+         <!-- <li> <a href="blog.html"><input type="image" src="images/home.png" name="pre"></a></li> -->
+          <li>
+       <div id="header_clock">
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="170" height="50" id="FlashID" title="clock">
+           <param name="movie" value="../../flash/clock.swf">
+           <param name="quality" value="high">
+           <param name="wmode" value="opaque">
+           <param name="swfversion" value="9.0.45.0">
+           <param name="expressinstall" value="Scripts/expressInstall.swf">
+           <!--[if !IE]>-->
+           <object type="application/x-shockwave-flash" data="../../flash/clock.swf" width="170" height="50">
+             <!--<![endif]-->
+             <param name="quality" value="high">
+             <param name="wmode" value="opaque">
+             <param name="swfversion" value="9.0.45.0">
+             <param name="expressinstall" value="Scripts/expressInstall.swf">
+             <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+             <div>
+               <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+               <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+             </div>
+             <!--[if !IE]>-->
+           </object>
+           <!--<![endif]-->
+         </object>
+       </div>
+         </li>
+     </ul>    
+      </div>
+ </div>
+  
+  <!--文章-->
+ <div id="pages">
+ <a>When Search Meets Web Usability</a>
+ <span class="category-tag">[SEO]</span>
+   <span class="date">11月 09日</span>
+    <p> &nbsp;&nbsp;在图书馆看到本书《网站搜索设计》,兼顾SEO及可用性的网站设计心得。看着是图灵的，由于想深入了解下SEO什么的，顺手就拿回来了，反正这书个头不大。</p>
+    <p>&nbsp;&nbsp;小半个上午就翻完了半本书，很多细节没有细看，毕竟我又不是专门的SEO专员...一直感觉自己学的东西杂而不精，然后就有种啥都没学到的感觉。<p>
+    <p>&nbsp;&nbsp;切入正题，<strong>When Search Meets Web Usability</strong></p>
+    <p><strong>SEO:</strong>传统上，SEO是一种为整个网站进行设计，文案创作，编写HTML代码、脚本和程序的过程，旨在提高网站或网页吻合特定关键词的几率，提升其在搜索结果列表中的排名。当然了《网站搜索设计》这本书不单纯的只是围绕着WEB搜索引擎优化的，提出了应该除了搜索引擎优化更应该关注用户群体。
+    <p><strong>链接开发度:</strong>(Link Development)，是指指向某个网站的外部第三方链接的数量和质量。所有的主流搜索引擎都利用某个网站的链接广泛度(Link Popularity)来确定在搜索结果中的排名。所以嘛，你经常可以看见有些Blog主天天挨那和别人交换链接，做个友链呢。还时不时的定期清理下无效的链接....好吧，不吐槽了。</p>
+    <p><strong>网站可用性:</strong>个人理解是，并不是说一个网站能够正常能运作，可以被用户使用就完事了，有效性、效率、可学习性，满意度什么的能够提升用户体验的东东才能提升网站可用性，当然后面会提到的A/B测试。    
+    </p>
+    <p><strong>关于WEB搜索引擎的三类查询：</strong></p>
+     <ul>
+        <li>引导型查询</li>
+          <p>就比如你一时忘记某个网站的网址了，或者不想输入过长的URL，直接搜索吧。有10%~26%的搜索查询属于引导型。</p>
+            <ul>
+            <li>多买些域名，包括公司的名称啊，字母缩写啊，旗下的品牌啊，商标用语。因为有些域名那么相似，总有用户会输错的，网站这样才会较有前瞻意识。</li>
+            <li>搜索引擎营销---SEM(Search Engine Marketing)</li>
+            <li>对于引导型查询，根据经验，抱着URL补偿过65个字符，长了人也烦嘛，就比如亚马逊的短连接地址，Z.CN，这真是极好的啊。</li>
+            </ul>
+            <br>
+         <li>信息型查询</li>
+          <p>为了查找某些方面的信息而进行的搜索，比如我经常百度些how to的问题，以及google看来自stackoverflow的问题的回答。最普遍的搜索引擎查询，占了48%~80%</p>
+            <ul>
+            <li>对于信息型搜索，增加常见的FAQ页面专门解答那些对关键词的回答。</li>
+            <li>维基百科是一个信息型的网站，与之相对的，在线零售商城则主要属于事物型的网站</li>
+            <li>①丰富meta标签的内容，因为搜索引擎主要是从title和meta标签以及符合搜索关键字的网页内容来排列搜索结果的，所以这能够增加关键字的吻合概率。一般200-250个字符；②为每一个页面给出专属的meta 标签，这一点我的blog没有做到，个人blog的SEO什么的，I don't care。③在meta和主要内容进行双重曝光。</li>
+            </ul>
+          <br>
+        <li>事物型查询</li>
+        <p>除了搜索阅读信息外，还行干些什么呢，购物啊，下载啊，这些交互行为就属于事物型查询了。大概有10%~24%的搜索查询属于这块的。</p>
+        <ul>
+         <li>A/B Split Testing,A/B测试主要是用于SEO活网络营销通过测试方法来比较对象的(就比如两个不同版本的的网页设计啊，用Google Analytics统计用户体验)，然后选择一个用户体验度好的版本就是咯。</li>
+         <li><em>不要假设锁锁着会愿意接受自发地行为</em>，今天登陆江西移动真的是，那么大的焦点图，不就双十一嘛，弹了足足有十秒的样子。好在有关闭的X，不然真心有没有关闭的X的强迫症。</li>
+        </ul>
+      </ul>    
+      <p>以上，没有全部写出看书的总结，还是觉得这些东西有点虚啊，纸上得来终觉浅。以后关于SEO相关的就放在这个页面咯~~</p> 
+    <hr  style=" border-bottom-color:#C96;">  
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6811157" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+ </div><!--pages-->
+ 
+  <!--backtop-->
+ <div id="btn" class="button" onclick="backTop()"></div>
+ 
+    </div> <!--content-->
+</div>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+ </script>
+<!--DISQUS-->
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>  
+</body>
+</html>
