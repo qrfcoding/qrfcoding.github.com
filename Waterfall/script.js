@@ -185,7 +185,7 @@ function preview(j){
 	//设置图片预览div样式  
 	preview.setAttribute("id","preview");  
 	preview.style.zIndex="100";
-	preview.innerHTML='<a  href="#" id="close" onclick="close_Preview();">Close</a><img src="img/'+j+'.jpg" width="600" height="500" id='+j+' /><div id="words"></div> ';
+	preview.innerHTML='<a  href="#" id="close" onclick="close_Preview();">Close</a><img src="img/'+j+'.JPG" width="600" height="500" id='+j+' /><div id="words"></div> ';
 	document.body.appendChild(preview);	
 	//设置背景容器不能被点击
 	//container.style.zIndex="-1";	 
