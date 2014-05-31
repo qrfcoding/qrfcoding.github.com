@@ -127,7 +127,7 @@
         for(var j = 0, k = data.length; j < k; j++) {
             var cell = document.createElement('div');
             cell.className = 'cell';
-            cell.innerHTML = '<p><a href="#"><img src="img/' + data[j].s + '.jpg" height="' + data[j].h + '" width="190" /></a></p><h2><a href="#">' + data[j].s + '.jpg</a></h2><span class="like">Like!</span><span class="mark">Mark!</span>';
+            cell.innerHTML = '<p><a onclick="preview('+data[j].s+');" href="#"><img  src="http://qiurifeng.qiniudn.com/' + data[j].s + '.JPG" height="' + data[j].h + '" width="190"  /></a></p><h2><a href="#">' + data[j].s + '.JPG</a></h2><span class="like">Like!</span><span class="mark">Mark!</span>';
             cells.push(cell);
             fragment.appendChild(cell);
         }
@@ -175,3 +175,26 @@
     addEvent(window, 'load', init);
 
 })();
+
+
+ /***********图片放大************/
+function preview(j){
+	var container=document.getElementById("container"); //var flag=document.getElementById(j);
+	//创建图片容器div
+	var preview=document.createElement("div");
+	//设置图片预览div样式  
+	preview.setAttribute("id","preview");  
+	preview.style.zIndex="100";
+	preview.innerHTML='<a  href="#" id="close" onclick="close_Preview();">Close</a><img src="img/'+j+'.jpg" width="600" height="500" id='+j+' /><div id="words"></div> ';
+	document.body.appendChild(preview);	
+	//设置背景容器不能被点击
+	//container.style.zIndex="-1";	 
+	}
+	
+ /********关闭图片***********/	
+  function close_Preview(){
+	  var preview=document.getElementById("preview");
+	  preview.parentNode.removeChild(preview);	 //document.body.removeChild(preview);	  
+	  var container=document.getElementById("container");
+	  //container.style.zIndex="1";
+	}	
