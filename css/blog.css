@@ -26,7 +26,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	position:relative;
 	height:auto;
 	width:21%;	
-	min-height:2300px; /*如何通过CSS让left的background的图片随右侧的pageauto垂直重复？现在只能通过min-height这个属性，让left尽量长，不让文章的尺寸超过，没做到自适应唉*/
+	min-height:2500px; /*如何通过CSS让left的background的图片随右侧的pageauto垂直重复？现在只能通过min-height这个属性，让left尽量长，不让文章的尺寸超过，没做到自适应唉*/
 	background:url(../images/bg-ramp.jpg);
 	background-repeat:repeat-y;			
 	}
@@ -158,7 +158,7 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 #content{
 	  position:relative; /**设置定位属性，但是不设置偏移属性，为子元素定位提供基准，如footer子div**/
 	  height:100%;
-	  min-height:1500px;
+	  min-height:2500px;
 	  width:79%;
 	  margin:0px;	
 	  float:right;
