@@ -1,5 +1,5 @@
 qrfcoding.github.com
 ====================
 
- Qiurif Blog Host by github pages
+ Qiurf Blog Host by github pages
  ---QRF---
