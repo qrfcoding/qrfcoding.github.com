@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Github Pages,Qiurif Blog,DRcoding,QRF">
+<meta name="description" content="Blog Power By QRF">
+<link rel="shortcut icon" href="favicon.ico" />
+<title>Mysql + JDBC Pool连接池配置介绍 </title>
+<link  href="../../css/blog.css" type="text/css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/Calendar.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script src="../../js/backtop.js"></script>
+<!--others-->
+<style>
+#web table{	
+	  margn:auto;
+	  border:1px solid #669;
+		}	
+
+ #web th{  
+	font-weight:normal;
+	font-style:italic;
+	text-align:left;
+	border:1px dotted #699;
+	background-color:#9cc;	
+	color:#000;
+		}  
+#web th,td{
+	 width:15em;
+	 padding:.5em;
+
+	 }
+#web tr:nth-child(odd){background-color:#ffc;}
+#web tr:nth-child(ecen){background-color:#fff}	 /** 浏览器支持CSS3的话，两行代码解决奇数行偶数行的颜色的问题 **/
+	 	
+</style>
+</head>
+<body>
+<div id="container">
+<div id="left">
+   <div id="logo"><!--logo 熏--></div>
+   <!---介绍div-->
+<div id="introduce">     
+       
+    <div id="sort" class="left">
+    <a  href="../../index.html"><span>归&nbsp;档</span></a>
+    </div>
+    
+     <div id="about" class="left">
+     <a  href="../aboutme.html"><span>关&nbsp;于&nbsp;我</span></a>
+    </div>
+    
+      <div id="contact" class="left">
+     <a  href="../contactme.html"><span>联&nbsp;系&nbsp;我</span></a>
+    </div>  
+    
+     <div id="latest" class="left">
+    <a  href="../Links.html"><span>友情链接</span></a>
+    </div>
+        <!--calendar-->
+     <div id="calendar" style="width:180px; height:180px; margin:30px auto;"> </div>
+</div>
+ 
+</div>
+
+  <div id="content">
+   <div id="header">
+     <div id="header_left">
+        <input type="image" src="../../images/left.jpg" id="hidden" onclick="hide()" >
+       <input type="image" src="../../images/right.jpg" name="dispaly" id="display" style="display:none;"  onclick="dis()">  <!-- 暂时隐藏--> 
+     </div>
+    &nbsp;
+     <div id="header_right">
+         <ul id="header_right_nav">
+         <!-- <li> <a href="blog.html"><input type="image" src="images/home.png" name="pre"></a></li> -->
+          <li>
+       <div id="header_clock">
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="170" height="50" id="FlashID" title="clock">
+           <param name="movie" value="../../flash/clock.swf">
+           <param name="quality" value="high">
+           <param name="wmode" value="opaque">
+           <param name="swfversion" value="9.0.45.0">
+           <param name="expressinstall" value="Scripts/expressInstall.swf">
+           <!--[if !IE]>-->
+           <object type="application/x-shockwave-flash" data="../../flash/clock.swf" width="170" height="50">
+             <!--<![endif]-->
+             <param name="quality" value="high">
+             <param name="wmode" value="opaque">
+             <param name="swfversion" value="9.0.45.0">
+             <param name="expressinstall" value="Scripts/expressInstall.swf">
+             <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+             <div>
+               <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+               <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+             </div>
+             <!--[if !IE]>-->
+           </object>
+           <!--<![endif]-->
+         </object>
+       </div>
+         </li>
+     </ul>    
+      </div>
+ </div>
+ <!--文章-->
+ <div id="pages">
+   <p>
+   <a>MySQL + JDBC Pool连接池配置介绍 </a>
+   <span class="category-tag">[]</span>
+   <span class="date">12月 28日</span>
+   </p>
+   <p>关于JDBC Pool的官方配置在此：<a href="http://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html" target="_blank">The Tomcat JDBC Connection Pool</a></p>
+     <b>选用JDBC Pool的原因：</b>
+     <p>The JDBC Connection Pool org.apache.tomcat.jdbc.pool is a replacement or an alternative to the Apache Commons DBCP connection pool.</p>
+     <p>查找过几个连接池的测试资料，JDBC Pool的稳定性以及性能确实优于 DBCP，至于ProXool，倒是没用过。值得提一点的是JNDI的方式配置数据源和hibernate的连接池，确实是很方便的。
+	 </p>
+
+    <b>MySQL+Hibernate 架构的8小时问题：</b>
+	<p>MySQL 默认的配置是 wait_timeout和interative默认是 28800秒，即八小时，超过八小时mMysql会自动总清理超时链接，然后问题来了，连接池内依然会有链接使用着Mysql 的这个已经kill的链接，从而导致连接失败。
+	</p>
+	<p>通过Mysql的命令行 show full processlist;我们可以查看此时mysql的 进程数，show status,则是可以查看 状态。所以也是一直在调整连接池的配置和 数据库的配置来观察实际上的数据。对于上面提到的八小时问题，刚开始的解决方案是参照网上的调整 超时时间即可，但是这样会造成一个问题，MySQL 可能会出现 “too many connection” 的错误，如果你在短时间建立起超过mysql max_connection的链接数，当然会也可以调大max_connection的属性，官网给出的这个值最大是1W6左右，可是这样会造成的性能问题。
+	</p>
+	<b>JDBC Pool 配置解决八小时问题</b>
+	<p>
+	 在参阅了官方文档后试过很多连接池属性，发现这个：maxAge，当一个已用链接回到连接池时 maxAge是指这个已用链接的超时时间，超过这个时间则从 连接池Drop掉这个链接，所以，你只要设置maxAge 小于 wait_timeout，这样就不会出现上述的链接失效的问题。顺带的时候 连接池的minIdel 属性可以 限制连接池的空闲连接数。
+	</p>
+	<p>JDBC POOL 配置的一些属性 稍后会做补充。</p>
+    <hr  style=" border-bottom-color:#C96;">  
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6811157" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+       <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div><!--pages-->  
+      
+        <!--backtop-->
+ <div id="btn" class="button" onclick="backTop()"></div>
+      
+   </div> <!--content-->
+</div>
+<script type="text/javascript">
+        var date = new Date();
+        var mapping = [];
+        mapping.push(new DateLinkMapping("3-22-2010", "javascript:alert(1)"));
+        mapping.push(new DateLinkMapping("4-1-2010", "javascript:alert(1)"))
+        Calendar.Init(null, mapping);
+
+        Calendar.RenderCalendar("calendar", date.getMonth() + 1, date.getFullYear());
+</script>
+<script type="text/javascript"  src="../../js/display.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
+<!--DISQUS-->
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'qiurifblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+</body>
+</html>
