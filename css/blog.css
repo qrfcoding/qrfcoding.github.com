@@ -26,8 +26,6 @@ html{ font-family:Arial, Helvetica, sans-serif;}
 	position:relative;
 	height:auto;
 	width:21%;	
-	min-height:2535px; /*如何通过CSS让left的background的图片随右侧的pageauto垂直重复？现在只能通过min-height这个属性，让left尽量长，不让文章的尺寸超过，没做到自适应唉*/
-	background:url(../images/bg-ramp.jpg);
 	background-repeat:repeat-y;			
 	}
 #left span{
